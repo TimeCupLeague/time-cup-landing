@@ -70,27 +70,25 @@ jobs:
           git push origin release/v${{ steps.bump_version.outputs.new_version }}
 
       - name: Create PR to main
-        uses: peter-evans/create-pull-request@v5
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          path: .
-          branch: release/v${{ steps.bump_version.outputs.new_version }}
-          base: main
-          title: 'Release v${{ steps.bump_version.outputs.new_version }}'
-          body: |
-            ## Release v${{ steps.bump_version.outputs.new_version }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr create \
+            --base 'main' \
+            --head 'release/v${{ steps.bump_version.outputs.new_version }}' \
+            --title 'Release v${{ steps.bump_version.outputs.new_version }}' \
+            --body '## Release v${{ steps.bump_version.outputs.new_version }}
 
-            This PR merges the latest changes from `develop` to `main` for release.
+          This PR merges the latest changes from `develop` to `main` for release.
 
-            ### Changes
-            - Version bumped from ${{ steps.current_version.outputs.version }} to ${{ steps.bump_version.outputs.new_version }}
-            - All changes from `develop` branch
+          ### Changes
+          - Version bumped from ${{ steps.current_version.outputs.version }} to ${{ steps.bump_version.outputs.new_version }}
+          - All changes from `develop` branch
 
-            ### Checklist
-            - [x] CI checks passed
-            - [x] Version bumped
-            - [ ] Ready for production deployment
+          ### Checklist
+          - [x] CI checks passed
+          - [x] Version bumped
+          - [ ] Ready for production deployment
 
-            **Note**: After merging this PR, a sync PR will be automatically created to merge `main` back to `develop`.
-          draft: false
-          delete-branch: true
+          **Note**: After merging this PR, a sync PR will be automatically created to merge `main` back to `develop`.' \
+            --label automated --label release --label ${{ github.event.inputs.version_type }}
