@@ -7,7 +7,10 @@ import { leagueInfo } from '../../content/league';
 
 <Section background="primary" class="relative overflow-hidden">
   <!-- Background decoration -->
-  <div class="absolute inset-0 bg-gradient-to-br from-red-600 to-red-800"></div>
+  <div
+    class="absolute inset-0 bg-gradient-to-br from-primary-600 to-primary-800"
+  >
+  </div>
   <div class="absolute inset-0 bg-black opacity-10"></div>
 
   <Container class="relative z-10">
@@ -16,13 +19,11 @@ import { leagueInfo } from '../../content/league';
         {leagueInfo.name}
       </h1>
 
-      <p
-        class="text-large text-red-100 mb-8 max-w-3xl mx-auto animate-slide-up"
-      >
+      <p class="text-large text-white mb-8 max-w-3xl mx-auto animate-slide-up">
         {leagueInfo.tagline}
       </p>
 
-      <p class="text-lg text-red-200 mb-12 max-w-2xl mx-auto animate-slide-up">
+      <p class="text-lg text-white/90 mb-12 max-w-2xl mx-auto animate-slide-up">
         {leagueInfo.description}
       </p>
 
@@ -33,7 +34,7 @@ import { leagueInfo } from '../../content/league';
           variant="secondary"
           size="lg"
           href="#inscripcion"
-          class="bg-white text-red-600 hover:bg-red-50 border-white"
+          class="bg-white text-primary-500 hover:bg-primary-50 border-white"
         >
           Inscríbete Ahora
         </Button>
@@ -42,7 +43,7 @@ import { leagueInfo } from '../../content/league';
           variant="ghost"
           size="lg"
           href="/bases"
-          class="text-white border-white hover:bg-white hover:text-red-600"
+          class="text-white border-white hover:bg-white hover:text-primary-500"
         >
           Ver Bases
         </Button>
@@ -50,34 +51,34 @@ import { leagueInfo } from '../../content/league';
 
       <!-- Stats -->
       <div
-        class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 pt-16 border-t border-red-300"
+        class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 pt-16 border-t border-white/20"
       >
         <div class="text-center">
           <div class="text-3xl font-bold text-white mb-2">
             {leagueInfo.seasonDuration}
           </div>
-          <div class="text-red-200">Duración</div>
+          <div class="text-white/80">Duración</div>
         </div>
 
         <div class="text-center">
           <div class="text-3xl font-bold text-white mb-2">
             {leagueInfo.teamSize}
           </div>
-          <div class="text-red-200">Por Equipo</div>
+          <div class="text-white/80">Por Equipo</div>
         </div>
 
         <div class="text-center">
           <div class="text-3xl font-bold text-white mb-2">
             {leagueInfo.categories}
           </div>
-          <div class="text-red-200">Categorías</div>
+          <div class="text-white/80">Categorías</div>
         </div>
 
         <div class="text-center">
           <div class="text-3xl font-bold text-white mb-2">
             {leagueInfo.totalJornadas}
           </div>
-          <div class="text-red-200">Jornadas</div>
+          <div class="text-white/80">Jornadas</div>
         </div>
       </div>
     </div>
