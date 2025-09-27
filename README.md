@@ -184,7 +184,7 @@ Los estilos SCSS están organizados siguiendo la metodología **7-1 pattern**:
 
 El proyecto está configurado para desplegarse en:
 
-- **Sitio de producción**: `https://ligacrossfitnortemadrid.com`
+- **Sitio de producción**: `https://timecupleague.com`
 
 ### Comandos de despliegue
 
