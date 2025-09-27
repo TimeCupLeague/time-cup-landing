@@ -1,0 +1,66 @@
+---
+import Card from '../ui/Card.astro';
+import Container from '../ui/Container.astro';
+import Section from '../ui/Section.astro';
+import { leagueCategories } from '../../content/league';
+---
+
+<Section background="gray">
+  <Container>
+    <div class="text-center mb-16">
+      <h2 class="heading-2 mb-6">
+        Categorías de la Liga
+      </h2>
+      <p class="text-large max-w-3xl mx-auto">
+        Encuentra tu nivel y compite con atletas de tu misma categoría. Todos tienen cabida en nuestra liga.
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      {leagueCategories.map((category) => (
+        <Card class="relative">
+          <!-- Category badge -->
+          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+            <span class="bg-red-600 text-white px-4 py-2 rounded-full text-sm font-medium">
+              {category.name}
+            </span>
+          </div>
+          
+          <div class="pt-8">
+            <h3 class="heading-3 mb-4 text-center">
+              {category.name}
+            </h3>
+            
+            <p class="text-gray-600 mb-6 text-center">
+              {category.description}
+            </p>
+            
+            <div class="space-y-3">
+              <h4 class="font-semibold text-gray-900 mb-3">Requisitos:</h4>
+              <ul class="space-y-2">
+                {category.requirements.map((requirement) => (
+                  <li class="flex items-start">
+                    <span class="text-red-600 mr-2 mt-1">✓</span>
+                    <span class="text-sm text-gray-600">{requirement}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </Card>
+      ))}
+    </div>
+    
+    <div class="text-center mt-12">
+      <p class="text-gray-600 mb-6">
+        ¿No estás seguro de tu categoría? Te ayudamos a elegir la más adecuada para ti.
+      </p>
+      <a 
+        href="#inscripcion" 
+        class="btn btn-primary"
+      >
+        Consultar Categoría
+      </a>
+    </div>
+  </Container>
+</Section>

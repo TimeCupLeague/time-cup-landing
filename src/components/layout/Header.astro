@@ -1,0 +1,111 @@
+---
+import Button from '../ui/Button.astro';
+import Container from '../ui/Container.astro';
+---
+
+<header class="bg-white shadow-sm sticky top-0 z-50">
+  <Container>
+    <div class="flex items-center justify-between py-4">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <a href="/" class="text-2xl font-bold text-red-600"> Liga CrossFit </a>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="hidden md:flex items-center space-x-8">
+        <a
+          href="#caracteristicas"
+          class="text-gray-700 hover:text-red-600 transition-colors"
+        >
+          Características
+        </a>
+        <a
+          href="#categorias"
+          class="text-gray-700 hover:text-red-600 transition-colors"
+        >
+          Categorías
+        </a>
+        <a
+          href="#como-funciona"
+          class="text-gray-700 hover:text-red-600 transition-colors"
+        >
+          ¿Cómo funciona?
+        </a>
+        <a
+          href="/bases"
+          class="text-gray-700 hover:text-red-600 transition-colors"
+        >
+          Bases
+        </a>
+      </nav>
+
+      <!-- CTA Button -->
+      <div class="hidden md:block">
+        <Button href="#inscripcion" size="sm"> Inscribirse </Button>
+      </div>
+
+      <!-- Mobile menu button -->
+      <button class="md:hidden p-2" id="mobile-menu-button">
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="md:hidden hidden" id="mobile-menu">
+      <div class="py-4 border-t border-gray-200">
+        <nav class="flex flex-col space-y-4">
+          <a
+            href="#caracteristicas"
+            class="text-gray-700 hover:text-red-600 transition-colors"
+          >
+            Características
+          </a>
+          <a
+            href="#categorias"
+            class="text-gray-700 hover:text-red-600 transition-colors"
+          >
+            Categorías
+          </a>
+          <a
+            href="#como-funciona"
+            class="text-gray-700 hover:text-red-600 transition-colors"
+          >
+            ¿Cómo funciona?
+          </a>
+          <a
+            href="/bases"
+            class="text-gray-700 hover:text-red-600 transition-colors"
+          >
+            Bases
+          </a>
+          <Button href="#inscripcion" size="sm" class="w-full">
+            Inscribirse
+          </Button>
+        </nav>
+      </div>
+    </div>
+  </Container>
+</header>
+
+<script>
+  // Mobile menu toggle
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (mobileMenuButton && mobileMenu) {
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  }
+</script>

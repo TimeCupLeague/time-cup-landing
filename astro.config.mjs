@@ -5,7 +5,15 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://ligacrossfitnortemadrid.com',
   vite: {
     plugins: [tailwindcss()],
+  },
+  build: {
+    inlineStylesheets: 'auto',
+  },
+  compressHTML: true,
+  image: {
+    domains: ['ligacrossfitnortemadrid.com'],
   },
 });

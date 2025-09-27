@@ -1,0 +1,127 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import Container from '../components/ui/Container.astro';
+import Section from '../components/ui/Section.astro';
+import { leagueRules, leagueValues } from '../content/league';
+---
+
+<Layout>
+  <Header />
+  <main>
+    <!-- Hero Section -->
+    <Section background="primary" class="relative overflow-hidden">
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-primary-600 to-primary-800"
+      >
+      </div>
+      <div class="absolute inset-0 bg-black opacity-10"></div>
+
+      <Container class="relative z-10">
+        <div class="text-center text-white">
+          <h1 class="heading-1 text-white mb-6">Bases de la Liga</h1>
+
+          <p class="text-large text-primary-100 mb-8 max-w-3xl mx-auto">
+            Toda la información necesaria para participar en la Liga de CrossFit
+            Norte Madrid
+          </p>
+        </div>
+      </Container>
+    </Section>
+
+    <!-- Rules Section -->
+    <Section>
+      <Container>
+        <div class="max-w-4xl mx-auto">
+          <div class="space-y-12">
+            {
+              leagueRules.map((rule, index) => (
+                <div class="bg-white rounded-xl shadow-sm p-8 border-l-4 border-primary-600">
+                  <h2 class="heading-3 mb-6 text-primary-600">
+                    {index + 1}. {rule.title}
+                  </h2>
+
+                  {rule.content && (
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                      {rule.content}
+                    </p>
+                  )}
+
+                  {rule.subsections && (
+                    <div class="space-y-4">
+                      {rule.subsections.map(subsection => (
+                        <div class="flex items-start">
+                          <span class="text-primary-600 mr-3 mt-1">•</span>
+                          <p class="text-gray-700 leading-relaxed">
+                            {subsection}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </Container>
+    </Section>
+
+    <!-- Values Section -->
+    <Section background="gray">
+      <Container>
+        <div class="text-center mb-16">
+          <h2 class="heading-2 mb-6">Valores de la Liga</h2>
+          <p class="text-large max-w-3xl mx-auto">
+            Los principios que guían nuestra competición y comunidad
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {
+            leagueValues.map(value => (
+              <div class="bg-white rounded-xl shadow-sm p-6 text-center">
+                <h3 class="heading-3 mb-4 text-primary-600">{value.title}</h3>
+                <p class="text-gray-600 leading-relaxed">{value.description}</p>
+              </div>
+            ))
+          }
+        </div>
+      </Container>
+    </Section>
+
+    <!-- CTA Section -->
+    <Section background="primary">
+      <Container>
+        <div class="text-center text-white">
+          <h2 class="heading-2 text-white mb-6">¿Listo para unirte?</h2>
+
+          <p class="text-large text-primary-100 mb-8 max-w-2xl mx-auto">
+            Forma tu equipo, elige tu categoría y compite en la primera Liga de
+            CrossFit Norte Madrid.
+          </p>
+
+          <div
+            class="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          >
+            <a
+              href="/#inscripcion"
+              class="btn btn-secondary bg-white text-primary-600 hover:bg-primary-50 border-white"
+            >
+              Inscribir Equipo
+            </a>
+
+            <a
+              href="/"
+              class="btn btn-ghost text-white border-white hover:bg-white hover:text-primary-600"
+            >
+              Volver al Inicio
+            </a>
+          </div>
+        </div>
+      </Container>
+    </Section>
+  </main>
+  <Footer />
+</Layout>

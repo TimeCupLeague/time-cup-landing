@@ -1,0 +1,22 @@
+---
+export interface Props {
+  class?: string;
+  size?: 'sm' | 'md' | 'lg' | 'xl' | 'full';
+}
+
+const { class: className = '', size = 'lg', ...rest } = Astro.props;
+
+const sizeClasses = {
+  sm: 'max-w-3xl',
+  md: 'max-w-4xl',
+  lg: 'max-w-6xl',
+  xl: 'max-w-7xl',
+  full: 'max-w-full',
+};
+
+const classes = `container-custom ${sizeClasses[size]} ${className}`.trim();
+---
+
+<div class={classes} {...rest}>
+  <slot />
+</div>

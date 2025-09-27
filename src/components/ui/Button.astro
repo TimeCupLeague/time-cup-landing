@@ -1,0 +1,40 @@
+---
+export interface Props {
+  variant?: 'primary' | 'secondary' | 'ghost';
+  size?: 'sm' | 'md' | 'lg';
+  href?: string;
+  target?: string;
+  class?: string;
+}
+
+const {
+  variant = 'primary',
+  size = 'md',
+  href,
+  target,
+  class: className = '',
+  ...rest
+} = Astro.props;
+
+const baseClasses = 'btn';
+const variantClasses = {
+  primary: 'btn-primary',
+  secondary: 'btn-secondary',
+  ghost: 'btn-ghost',
+};
+const sizeClasses = {
+  sm: 'px-4 py-2 text-sm',
+  md: 'px-6 py-3 text-base',
+  lg: 'px-8 py-4 text-lg',
+};
+
+const classes =
+  `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`.trim();
+
+const Tag = href ? 'a' : 'button';
+const attributes = href ? { href, target } : {};
+---
+
+<Tag class={classes} {...attributes} {...rest}>
+  <slot />
+</Tag>
