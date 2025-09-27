@@ -94,7 +94,8 @@ export const leagueFeatures: LeagueFeature[] = [
   {
     id: 'promotion-relegation',
     title: 'Ascensos y Descensos',
-    description: 'El ganador asciende de categoría y el último desciende, manteniendo la competitividad.',
+    description:
+      'El ganador asciende de categoría y el último desciende, manteniendo la competitividad y haciendo el nivel más orgánico.',
     icon: '⬆️⬇️',
   },
   {
