@@ -3,30 +3,30 @@
 // =============================================================================
 
 export interface LeagueCategory {
-  id: string;
-  name: string;
-  description: string;
-  requirements: string[];
+  id: string
+  name: string
+  description: string
+  requirements: string[]
 }
 
 export interface LeagueFeature {
-  id: string;
-  title: string;
-  description: string;
-  icon: string;
+  id: string
+  title: string
+  description: string
+  icon: string
 }
 
 export interface LeagueValue {
-  id: string;
-  title: string;
-  description: string;
+  id: string
+  title: string
+  description: string
 }
 
 export interface LeagueRule {
-  id: string;
-  title: string;
-  content: string;
-  subsections?: string[];
+  id: string
+  title: string
+  content: string
+  subsections?: string[]
 }
 
 export const leagueCategories: LeagueCategory[] = [
@@ -63,14 +63,13 @@ export const leagueCategories: LeagueCategory[] = [
       'Ideal para principiantes',
     ],
   },
-];
+]
 
 export const leagueFeatures: LeagueFeature[] = [
   {
     id: 'continuous-competition',
     title: 'Competición Continua',
-    description:
-      'Temporadas de 3 meses con enfrentamientos regulares, no solo un fin de semana al año.',
+    description: 'Temporadas de 3 meses con enfrentamientos regulares, no solo un fin de semana al año.',
     icon: '🏆',
   },
   {
@@ -83,32 +82,28 @@ export const leagueFeatures: LeagueFeature[] = [
   {
     id: 'online-presential',
     title: 'Online + Presencial',
-    description:
-      '5 jornadas online y 1 jornada presencial final para vivir la experiencia en comunidad.',
+    description: '5 jornadas online y 1 jornada presencial final para vivir la experiencia en comunidad.',
     icon: '💻',
   },
   {
     id: 'transparent-scoring',
     title: 'Puntuación Transparente',
-    description:
-      'Sistema de puntos claro con revisión de vídeos por jueces acreditados.',
+    description: 'Sistema de puntos claro con revisión de vídeos por jueces acreditados.',
     icon: '📊',
   },
   {
     id: 'promotion-relegation',
     title: 'Ascensos y Descensos',
-    description:
-      'El ganador asciende de categoría y el último desciende, manteniendo la competitividad.',
+    description: 'El ganador asciende de categoría y el último desciende, manteniendo la competitividad.',
     icon: '⬆️⬇️',
   },
   {
     id: 'gamification',
     title: 'Gamificación',
-    description:
-      'Badges digitales, logros individuales y seguimiento de progreso personal.',
+    description: 'Badges digitales, logros individuales y seguimiento de progreso personal.',
     icon: '🎮',
   },
-];
+]
 
 export const leagueValues: LeagueValue[] = [
   {
@@ -119,32 +114,27 @@ export const leagueValues: LeagueValue[] = [
   {
     id: 'community',
     title: 'Comunidad',
-    description:
-      'Más que competir, buscamos crear una tribu de atletas que se apoyen entre sí.',
+    description: 'Más que competir, buscamos crear una tribu de atletas que se apoyen entre sí.',
   },
   {
     id: 'improvement',
     title: 'Superación',
-    description:
-      'Cada WOD es una oportunidad para demostrar que siempre se puede dar un paso más.',
+    description: 'Cada WOD es una oportunidad para demostrar que siempre se puede dar un paso más.',
   },
   {
     id: 'equality',
     title: 'Igualdad',
-    description:
-      'Hombres y mujeres compiten en equipos mixtos, con igualdad de protagonismo.',
+    description: 'Hombres y mujeres compiten en equipos mixtos, con igualdad de protagonismo.',
   },
   {
     id: 'fair-play',
     title: 'Juego Limpio',
-    description:
-      'El respeto a las reglas y a los rivales está por encima de la clasificación.',
+    description: 'El respeto a las reglas y a los rivales está por encima de la clasificación.',
   },
   {
     id: 'commitment',
     title: 'Compromiso',
-    description:
-      'Inscribirse significa dar lo mejor de uno mismo en cada WOD y cumplir con los plazos.',
+    description: 'Inscribirse significa dar lo mejor de uno mismo en cada WOD y cumplir con los plazos.',
   },
   {
     id: 'fun',
@@ -155,21 +145,19 @@ export const leagueValues: LeagueValue[] = [
   {
     id: 'growth',
     title: 'Crecimiento Continuo',
-    description:
-      'No solo se trata de ganar, sino de mejorar en cada season y aprender del proceso.',
+    description: 'No solo se trata de ganar, sino de mejorar en cada season y aprender del proceso.',
   },
   {
     id: 'accessibility',
     title: 'Accesibilidad',
-    description:
-      'Un formato pensado para todos los niveles, desde escalado hasta RX.',
+    description: 'Un formato pensado para todos los niveles, desde escalado hasta RX.',
   },
   {
     id: 'passion',
     title: 'Pasión por el CrossFit',
     description: 'La motivación que nos une y que da sentido a la liga.',
   },
-];
+]
 
 export const leagueRules: LeagueRule[] = [
   {
@@ -282,7 +270,7 @@ export const leagueRules: LeagueRule[] = [
       'Si un equipo reclama y falla, pierde la posibilidad de reclamación en el resto de la liga. Si reclama y tiene razón, mantiene esa posibilidad.',
     ],
   },
-];
+]
 
 export const leagueInfo = {
   name: 'Time Cup League',
@@ -295,4 +283,4 @@ export const leagueInfo = {
   onlineJornadas: 5,
   presentialJornadas: 1,
   totalJornadas: 6,
-};
+}

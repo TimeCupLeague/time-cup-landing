@@ -1,7 +1,7 @@
-import js from '@eslint/js';
-import typescript from '@typescript-eslint/eslint-plugin';
-import typescriptParser from '@typescript-eslint/parser';
-import astro from 'eslint-plugin-astro';
+import js from '@eslint/js'
+import typescript from '@typescript-eslint/eslint-plugin'
+import typescriptParser from '@typescript-eslint/parser'
+import astro from 'eslint-plugin-astro'
 
 export default [
   js.configs.recommended,
@@ -38,4 +38,4 @@ export default [
   {
     ignores: ['dist/', 'node_modules/', '.astro/', '.output/'],
   },
-];
+]
