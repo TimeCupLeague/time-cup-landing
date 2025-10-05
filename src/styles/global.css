@@ -1,4 +1,6 @@
 @import 'tailwindcss';
+/* Custom base styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 /* Custom color variables for Tailwind v4 */
 @theme {
@@ -64,9 +66,6 @@
   --max-width-8xl: 88rem;
   --max-width-9xl: 96rem;
 }
-
-/* Custom base styles */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 html {
   scroll-behavior: smooth;
