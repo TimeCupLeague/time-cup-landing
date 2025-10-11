@@ -8,19 +8,16 @@ import { leagueInfo } from '../../content/league';
 <Section background="primary" class="relative overflow-hidden">
   <!-- Background decoration -->
   <div
-    class="absolute inset-0 bg-gradient-to-br from-primary-600 to-primary-800"
+    class="absolute inset- bg-gradient-to-br from-primary-600 to-primary-800"
   >
   </div>
   <div class="absolute inset-0 bg-black opacity-10"></div>
 
   <Container class="relative z-10">
     <div class="text-center text-white">
-      <h1 class="heading-1 text-white mb-6 animate-fade-in">
-        {leagueInfo.name}
-      </h1>
 
-      <p class="text-large text-white mb-8 max-w-3xl mx-auto animate-slide-up">
-        {leagueInfo.tagline}
+      <p class="text-large text-white font-bold mb-8 max-w-3xl mx-auto animate-slide-up">
+        {leagueInfo.tagline.toUpperCase()}
       </p>
 
       <p class="text-lg text-white/90 mb-12 max-w-2xl mx-auto animate-slide-up">
