@@ -1,6 +1,6 @@
-# Time Cup - Liga de CrossFit
+# Time Cup - Liga de Cross Training
 
-Una liga online y presencial de CrossFit en formato competitivo, con seasons de 3-6 meses, categorías por nivel y equipos de 4 personas. Los equipos compiten semanalmente enviando sus resultados en vídeo, con revisiones oficiales y un sistema de ascensos/descensos entre divisiones.
+Una liga online y presencial de Cross Training en formato competitivo, con seasons de 3-6 meses, categorías por nivel y equipos de 4 personas. Los equipos compiten semanalmente enviando sus resultados en vídeo, con revisiones oficiales y un sistema de ascensos/descensos entre divisiones.
 
 ## 🎯 Propuesta de Valor
 

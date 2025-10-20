@@ -33,18 +33,18 @@ export const leagueCategories: LeagueCategory[] = [
   {
     id: 'rx',
     name: 'RX (Avanzado)',
-    description: 'Para atletas con experiencia avanzada en CrossFit',
+    description: 'Para atletas con experiencia avanzada en Cross Training',
     requirements: [
       'Movimientos complejos sin escalar',
       'Peso RX en todos los ejercicios',
       'Técnica depurada en movimientos gimnásticos',
-      'Experiencia mínima de 2 años en CrossFit',
+      'Experiencia mínima de 2 años en Cross Training',
     ],
   },
   {
     id: 'intermedio',
     name: 'Intermedio',
-    description: 'Para atletas con nivel medio en CrossFit',
+    description: 'Para atletas con nivel medio en Cross Training',
     requirements: [
       'Movimientos básicos dominados',
       'Peso intermedio en ejercicios',
@@ -55,7 +55,7 @@ export const leagueCategories: LeagueCategory[] = [
   {
     id: 'escalado',
     name: 'Escalado (Iniciación)',
-    description: 'Para atletas que están comenzando en CrossFit',
+    description: 'Para atletas que están comenzando en Cross Training',
     requirements: [
       'Movimientos escalados según capacidad',
       'Peso adaptado al nivel individual',
@@ -155,7 +155,7 @@ export const leagueValues: LeagueValue[] = [
   },
   {
     id: 'passion',
-    title: 'Pasión por el CrossFit',
+    title: 'Pasión por el Cross Training',
     description: 'La motivación que nos une y que da sentido a la liga.',
   },
 ]
@@ -165,7 +165,7 @@ export const leagueRules: LeagueRule[] = [
     id: 'what-is-league',
     title: '¿Qué es la Liga?',
     content:
-      'La Liga de CrossFit Norte Madrid es una competición continua pensada para atletas amateurs de todos los niveles. A diferencia de las competiciones tradicionales de un solo fin de semana, la liga ofrece temporadas de 3 meses, con enfrentamientos regulares y posibilidad de ascender o descender de categoría, en formato semipresencial.',
+      'La Liga de Cross Training Norte Madrid es una competición continua pensada para atletas amateurs de todos los niveles. A diferencia de las competiciones tradicionales de un solo fin de semana, la liga ofrece temporadas de 3 meses, con enfrentamientos regulares y posibilidad de ascender o descender de categoría, en formato semipresencial.',
   },
   {
     id: 'league-format',
@@ -277,9 +277,9 @@ export const leagueInfo = {
   name: 'Time Cup League',
   tagline: 'Compite todo el año, no solo un fin de semana',
   description:
-    'Una liga online y presencial de CrossFit en formato competitivo, con seasons de 3 meses, categorías por nivel y equipos de 3 personas.',
+    'Una liga online y presencial de Cross Training en formato competitivo, con seasons de 3 meses, categorías por nivel y equipos de 3 personas.',
   seasonDuration: '3 meses',
-  teamSize: '3 atletas (2 hombres + 1 mujer)',
+  teamSize: '3 atletas 👨👨👩',
   categories: leagueCategories.length,
   onlineJornadas: 5,
   presentialJornadas: 1,

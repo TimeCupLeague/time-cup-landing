@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://ligacrossfitnortemadrid.com',
+  site: 'https://www.timecupleague.com',
   vite: {
     plugins: [tailwindcss()],
   },
@@ -14,6 +14,6 @@ export default defineConfig({
   },
   compressHTML: true,
   image: {
-    domains: ['ligacrossfitnortemadrid.com'],
+    domains: ['timecupleague.com'],
   },
 })
