@@ -160,6 +160,10 @@ body {
   @apply bg-white rounded-xl shadow-sm p-6 transition-all duration-200 hover:shadow-md hover:-translate-y-1;
 }
 
+.card_opacity_80 {
+  @apply bg-white/80 rounded-xl shadow-sm p-6 transition-all duration-200 hover:shadow-md hover:-translate-y-1;
+}
+
 .container-custom {
   @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
 }

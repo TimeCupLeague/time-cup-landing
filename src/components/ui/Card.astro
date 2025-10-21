@@ -2,13 +2,22 @@
 export interface Props {
   class?: string;
   hover?: boolean;
+  classOpacity?: 'card'|'card_opacity';
 }
 
-const { class: className = '', hover = true, ...rest } = Astro.props;
+const { 
+  class: className = '', 
+  hover = true,
+  classOpacity = 'card', 
+  ...rest
+} = Astro.props;
 
-const baseClasses = 'card';
+const opacityClasses = {
+  card: 'card',
+  card_opacity : 'card_opacity_80'
+};
 const hoverClasses = hover ? 'hover:shadow-md hover:-translate-y-1' : '';
-const classes = `${baseClasses} ${hoverClasses} ${className}`.trim();
+const classes = `${opacityClasses[classOpacity]} ${hoverClasses} ${className}`.trim();
 ---
 
 <div class={classes} {...rest}>
