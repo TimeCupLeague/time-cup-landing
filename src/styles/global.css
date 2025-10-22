@@ -157,11 +157,11 @@ body {
 }
 
 .card {
-  @apply bg-white rounded-xl shadow-sm p-6 transition-all duration-200 hover:shadow-md hover:-translate-y-1;
+  @apply bg-white rounded-xl shadow-sm p-6 transition-all duration-200 hover:shadow-md hover:-translate-y-3;
 }
 
 .card_opacity_80 {
-  @apply bg-white/80 rounded-xl shadow-sm p-6 transition-all duration-200 hover:shadow-md hover:-translate-y-1;
+  @apply bg-white/80 rounded-xl shadow-sm p-6 transition-all duration-200 hover:shadow-md hover:-translate-y-3;
 }
 
 .container-custom {
