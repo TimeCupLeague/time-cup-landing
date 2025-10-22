@@ -29,6 +29,30 @@ export interface LeagueRule {
   subsections?: string[]
 }
 
+export type LeagueStandard = Record<CrossfitMovement, CategoryStandard>
+
+export type CrossfitCategory = 'rx' | 'intermediate' | 'scaled'
+
+export type CategoryStandard = Record<CrossfitCategory, string | boolean>
+
+export type CrossfitMovement =
+  | 'T2B'
+  | 'PULL UPS'
+  | 'C2B'
+  | 'BMU'
+  | 'RMU'
+  | 'HSPU'
+  | 'HSW'
+  | 'Rope Climb'
+  | 'Legless RC'
+  | 'DU'
+  | 'Wall Climb'
+  | 'C&J'
+  | 'Snatch'
+  | 'DB'
+  | 'KTB'
+  | 'Sandbag'
+
 export const leagueCategories: LeagueCategory[] = [
   {
     id: 'rx',
@@ -284,4 +308,87 @@ export const leagueInfo = {
   onlineJornadas: 5,
   presentialJornadas: 1,
   totalJornadas: 6,
+}
+
+export const leagueStandards: LeagueStandard = {
+  T2B: {
+    rx: true,
+    intermediate: true,
+    scaled: 'K2C',
+  },
+  'PULL UPS': {
+    rx: true,
+    intermediate: true,
+    scaled: 'Banded PU',
+  },
+  C2B: {
+    rx: true,
+    intermediate: true,
+    scaled: false,
+  },
+  BMU: {
+    rx: true,
+    intermediate: 'Al menos un atleta',
+    scaled: false,
+  },
+  RMU: {
+    rx: true,
+    intermediate: false,
+    scaled: false,
+  },
+  HSPU: {
+    rx: true,
+    intermediate: true,
+    scaled: 'PIKE PUSH UP',
+  },
+  HSW: {
+    rx: true,
+    intermediate: false,
+    scaled: false,
+  },
+  'Rope Climb': {
+    rx: true,
+    intermediate: true,
+    scaled: 'Al menos un atleta',
+  },
+  'Legless RC': {
+    rx: true,
+    intermediate: 'Al menos un atleta',
+    scaled: false,
+  },
+  DU: {
+    rx: true,
+    intermediate: true,
+    scaled: 'SU',
+  },
+  'Wall Climb': {
+    rx: true,
+    intermediate: true,
+    scaled: true,
+  },
+  'C&J': {
+    rx: '90/60Kg',
+    intermediate: '70/45Kg',
+    scaled: '40/30Kg',
+  },
+  Snatch: {
+    rx: '70/45Kg',
+    intermediate: '50/35Kg',
+    scaled: '30/20Kg',
+  },
+  DB: {
+    rx: '25/17.5Kg',
+    intermediate: '22.5/15Kg',
+    scaled: '15/10Kg',
+  },
+  KTB: {
+    rx: '24/16Kg',
+    intermediate: '24/16Kg',
+    scaled: '16/12Kg',
+  },
+  Sandbag: {
+    rx: '75/50Kg',
+    intermediate: '60/40Kg',
+    scaled: '30/20Kg',
+  },
 }
