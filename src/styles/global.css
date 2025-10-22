@@ -149,7 +149,7 @@ body {
 }
 
 .btn-secondary {
-  @apply bg-transparent text-secondary-500 border-2 border-secondary-500 hover:bg-primary-500 hover:text-white focus:ring-primary-500;
+  @apply text-primary-900 border-2 border-secondary-500 hover:bg-primary-500 hover:text-white focus:ring-primary-500;
 }
 
 .btn-ghost {
@@ -186,4 +186,52 @@ body {
 
 .text-large {
   @apply text-lg sm:text-xl leading-relaxed;
+}
+
+/* Modal styles */
+.modal {
+  @apply fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm;
+  display: none;
+}
+
+.modal-content {
+  @apply bg-white rounded-2xl shadow-2xl max-w-4xl w-full mx-6 overflow-hidden;
+  position: relative;
+  transform: translate(0, 0);
+  margin: 0;
+}
+
+.close-button {
+  @apply absolute top-6 right-6 w-8 h-8 flex items-center justify-center text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-full transition-all duration-200;
+  font-size: 18px;
+  font-weight: bold;
+  z-index: 10;
+}
+
+.modal-title {
+  @apply text-2xl font-bold text-gray-900 mb-8 pt-10 px-10;
+}
+
+.table-container {
+  @apply overflow-x-auto px-10 pb-10;
+}
+
+.standards-table {
+  @apply w-full border-collapse;
+}
+
+.standards-table th {
+  @apply bg-gray-50 text-gray-700 text-center font-semibold py-3 px-4 border-b-2 border-gray-200;
+}
+
+.standards-table td {
+  @apply py-3 px-4 border-b border-gray-200 text-gray-600 text-center;
+}
+
+.standards-table tr:hover {
+  @apply bg-gray-50;
+}
+
+.standards-table tr:last-child td {
+  @apply border-b-0;
 }
