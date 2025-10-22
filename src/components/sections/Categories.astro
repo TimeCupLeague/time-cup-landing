@@ -3,7 +3,17 @@ import Card from '../ui/Card.astro';
 import Container from '../ui/Container.astro';
 import Section from '../ui/Section.astro';
 import Button from '../ui/Button.astro';
-import { leagueCategories } from '../../content/league';
+import { leagueCategories, leagueStandards } from '../../content/league';
+
+const renderStandard = (standard: string | boolean) => {
+  if (typeof(standard) === 'string') {
+    return standard;
+  }
+  if (typeof(standard) === 'boolean') {
+    return standard ? '✅' : '❌';
+  }
+  return '';
+}
 ---
 
 <Section id="categorias" class="bg-gradient-to-b from-secondary-600 to-indigo-900">
@@ -20,7 +30,6 @@ import { leagueCategories } from '../../content/league';
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
       {leagueCategories.map((category) => (
         <Card class="relative">
-          <!-- Category badge -->
           <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
             <span class="bg-primary-900 text-white px-4 py-2 rounded-2xl font-medium">
               {category.name}
@@ -91,102 +100,14 @@ import { leagueCategories } from '../../content/league';
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>T2B</td>
-            <td>SI</td>
-            <td>SI</td>
-            <td>K2C</td>
-          </tr>
-          <tr>
-            <td>PULL UPS</td>
-            <td>SI</td>
-            <td>SI</td>
-            <td>Banded PU</td>
-          </tr>
-          <tr>
-            <td>C2B</td>
-            <td>SI</td>
-            <td>SI</td>
-            <td>NO</td>
-          </tr>
-          <tr>
-            <td>BMU</td>
-            <td>SI</td>
-            <td>Al menos un atleta</td>
-            <td>NO</td>
-          </tr>
-          <tr>
-            <td>RMU</td>
-            <td>SI</td>
-            <td>NO</td>
-            <td>NO</td>
-          </tr>
-          <tr>
-            <td>HSPU</td>
-            <td>SI</td>
-            <td>SI</td>
-            <td>PIKE PUSH UP</td>
-          </tr>
-          <tr>
-            <td>HSW</td>
-            <td>SI</td>
-            <td>NO</td>
-            <td>NO</td>
-          </tr>
-          <tr>
-            <td>Rope Climb</td>
-            <td>SI</td>
-            <td>SI</td>
-            <td>Al menos un atleta</td>
-          </tr>
-          <tr>
-            <td>Legless RC</td>
-            <td>SI</td>
-            <td>Al menos un atleta</td>
-            <td>NO</td>
-          </tr>
-          <tr>
-            <td>DU</td>
-            <td>SI</td>
-            <td>SI</td>
-            <td>SU</td>
-          </tr>
-          <tr>
-            <td>Wall Climb</td>
-            <td>SI</td>
-            <td>SI</td>
-            <td>SI</td>
-          </tr>
-          <tr>
-            <td>C&J</td>
-            <td>90/60</td>
-            <td>70/45</td>
-            <td>40/30</td>
-          </tr>
-          <tr>
-            <td>Snatch</td>
-            <td>70/45</td>
-            <td>50/35</td>
-            <td>30/20</td>
-          </tr>
-          <tr>
-            <td>DB (x2)</td>
-            <td>25/17.5</td>
-            <td>22.5/15</td>
-            <td>15/10</td>
-          </tr>
-          <tr>
-            <td>KTB (x2)</td>
-            <td>24/16</td>
-            <td>24/16</td>
-            <td>16/12</td>
-          </tr>
-          <tr>
-            <td>Sandbag</td>
-            <td>75/50</td>
-            <td>60/40</td>
-            <td>30/20</td>
-          </tr>
+          {Object.entries(leagueStandards).map(([movement, categoryStandard]) => {
+            return (<tr>
+              <td class="font-bold">{movement}</td>
+              <td><span>{renderStandard(categoryStandard.rx)}</span></td>
+              <td><span>{renderStandard(categoryStandard.intermediate)}</span></td>
+              <td><span>{renderStandard(categoryStandard.scaled)}</span></td>
+            </tr>)
+          })}
         </tbody>
       </table>
     </div>
