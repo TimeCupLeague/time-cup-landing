@@ -204,7 +204,7 @@ npm run build
 
 ## 📞 Contacto
 
-Para más información sobre la liga o el proyecto, contacta con el equipo de desarrollo.
+Para más información sobre la liga o el proyecto, contacta con el equipo de desarrollo en timecupleague@gmail.com
 
 ---
 
