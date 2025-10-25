@@ -87,30 +87,76 @@ const renderStandard = (standard: string | boolean) => {
       ✕
     </button>
     
-    <h2 class="modal-title">Estándares por categoría</h2>
+    <div class="modal-header">
+      <h2 class="modal-title">Estándares por categoría</h2>
+    </div>
     
-    <div class="table-container">
-      <table class="standards-table">
-        <thead>
-          <tr>
-            <th>Movimiento</th>
-            <th>RX</th>
-            <th>Intermedio</th>
-            <th>Escalado</th>
-          </tr>
-        </thead>
-        <tbody>
-          {Object.entries(leagueStandards).map(([movement, categoryStandard]) => {
-            return (<tr>
-              <td class="font-bold">{movement}</td>
-              <td><span>{renderStandard(categoryStandard.rx)}</span></td>
-              <td><span>{renderStandard(categoryStandard.intermediate)}</span></td>
-              <td><span>{renderStandard(categoryStandard.scaled)}</span></td>
-            </tr>)
-          })}
-        </tbody>
-      </table>
+    <div class="modal-body" id="modalBody">
+      <div class="table-container">
+        <table class="standards-table">
+          <thead>
+            <tr>
+              <th>Movimiento</th>
+              <th>RX</th>
+              <th>Intermedio</th>
+              <th>Escalado</th>
+            </tr>
+          </thead>
+          <tbody>
+            {Object.entries(leagueStandards).map(([movement, categoryStandard]) => {
+              return (<tr>
+                <td class="font-bold">{movement}</td>
+                <td><span>{renderStandard(categoryStandard.rx)}</span></td>
+                <td><span>{renderStandard(categoryStandard.intermediate)}</span></td>
+                <td><span>{renderStandard(categoryStandard.scaled)}</span></td>
+              </tr>)
+            })}
+          </tbody>
+        </table>
+      </div>
+      <div class="scroll-indicator" id="scrollIndicator">
+        ↓
+      </div>
     </div>
   </div>
 </div>
+
+<script>
+  function handleScrollIndicator() {
+    const modalBody = document.getElementById('modalBody');
+    const scrollIndicator = document.getElementById('scrollIndicator');
+    
+    if (!modalBody || !scrollIndicator) return;
+    
+    function updateScrollIndicator() {
+      if (!modalBody || !scrollIndicator) return;
+
+      const isAtBottom = modalBody.scrollTop + modalBody.clientHeight >= modalBody.scrollHeight - 5;
+      
+      if (isAtBottom) {
+        scrollIndicator.style.opacity = '0';
+        scrollIndicator.style.transform = 'translateY(10px)';
+      } else {
+        scrollIndicator.style.opacity = '1';
+        scrollIndicator.style.transform = 'translateY(0)';
+      }
+    }
+    
+    updateScrollIndicator();
+    
+    modalBody.addEventListener('scroll', updateScrollIndicator);
+    
+    const modal = document.getElementById('modalEstandares');
+    if (modal) {
+      const observer = new MutationObserver(() => {
+        if (modal.style.display !== 'none') {
+          setTimeout(updateScrollIndicator, 100);
+        }
+      });
+      observer.observe(modal, { attributes: true, attributeFilter: ['style'] });
+    }
+  }
+  
+  document.addEventListener('DOMContentLoaded', handleScrollIndicator);
+</script>
 
