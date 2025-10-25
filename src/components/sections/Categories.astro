@@ -2,12 +2,23 @@
 import Card from '../ui/Card.astro';
 import Container from '../ui/Container.astro';
 import Section from '../ui/Section.astro';
-import { leagueCategories } from '../../content/league';
+import Button from '../ui/Button.astro';
+import { leagueCategories, leagueStandards } from '../../content/league';
+
+const renderStandard = (standard: string | boolean) => {
+  if (typeof(standard) === 'string') {
+    return standard;
+  }
+  if (typeof(standard) === 'boolean') {
+    return standard ? '✅' : '❌';
+  }
+  return '';
+}
 ---
 
-<Section background="gray" id="categorias">
+<Section id="categorias" class="bg-gradient-to-b from-secondary-800 to-indigo-900">
   <Container>
-    <div class="text-center mb-16">
+    <div class="text-center text-white mb-16">
       <h2 class="heading-2 mb-6">
         Categorías de la Liga
       </h2>
@@ -19,9 +30,8 @@ import { leagueCategories } from '../../content/league';
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
       {leagueCategories.map((category) => (
         <Card class="relative">
-          <!-- Category badge -->
           <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
-            <span class="bg-primary-500 text-white px-4 py-2 rounded-full text-sm font-medium">
+            <span class="bg-primary-900 text-white px-4 py-2 rounded-2xl font-medium">
               {category.name}
             </span>
           </div>
@@ -52,15 +62,55 @@ import { leagueCategories } from '../../content/league';
     </div>
     
     <div class="text-center mt-12">
-      <p class="text-gray-600 mb-6">
+      <p class="text-gray-200 mb-6">
         ¿No estás seguro de tu categoría? Te ayudamos a elegir la más adecuada para ti.
       </p>
-      <a 
-        href="#inscripcion" 
-        class="btn btn-primary"
-      >
+      
+      <Button
+          id="consultaEstandares"
+          variant="secondary"
+          size="lg"
+          href="/#categorias"
+          class="bg-white text-primary-500 hover:bg-primary-50 border-white"
+          onclick="document.getElementById('modalEstandares').style.display = 'flex'"
+        >
         Consultar Categoría
-      </a>
+      </Button>
+      
     </div>
   </Container>
 </Section>
+
+<div id="modalEstandares" class="modal" onclick="if(event.target === this) this.style.display = 'none'">
+  <div class="modal-content">
+    <button class="close-button" onclick="document.getElementById('modalEstandares').style.display = 'none'">
+      ✕
+    </button>
+    
+    <h2 class="modal-title">Estándares por categoría</h2>
+    
+    <div class="table-container">
+      <table class="standards-table">
+        <thead>
+          <tr>
+            <th>Movimiento</th>
+            <th>RX</th>
+            <th>Intermedio</th>
+            <th>Escalado</th>
+          </tr>
+        </thead>
+        <tbody>
+          {Object.entries(leagueStandards).map(([movement, categoryStandard]) => {
+            return (<tr>
+              <td class="font-bold">{movement}</td>
+              <td><span>{renderStandard(categoryStandard.rx)}</span></td>
+              <td><span>{renderStandard(categoryStandard.intermediate)}</span></td>
+              <td><span>{renderStandard(categoryStandard.scaled)}</span></td>
+            </tr>)
+          })}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+

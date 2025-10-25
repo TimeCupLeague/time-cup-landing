@@ -1,6 +1,6 @@
-# Time Cup - Liga de CrossFit
+# Time Cup - Liga de Cross Training
 
-Una liga online y presencial de CrossFit en formato competitivo, con seasons de 3-6 meses, categorías por nivel y equipos de 4 personas. Los equipos compiten semanalmente enviando sus resultados en vídeo, con revisiones oficiales y un sistema de ascensos/descensos entre divisiones.
+Una liga online y presencial de Cross Training en formato competitivo, con seasons de 3-6 meses, categorías por nivel y equipos de 4 personas. Los equipos compiten semanalmente enviando sus resultados en vídeo, con revisiones oficiales y un sistema de ascensos/descensos entre divisiones.
 
 ## 🎯 Propuesta de Valor
 
@@ -200,11 +200,11 @@ npm run build
 1. Crea una rama para tu feature: `git checkout -b feature/nueva-funcionalidad`
 2. Realiza tus cambios y commits: `git commit -m 'Agrega nueva funcionalidad'`
 3. Push a la rama: `git push origin feature/nueva-funcionalidad`
-4. Abre un Pull Request
+4. Abre un Pull Request.
 
 ## 📞 Contacto
 
-Para más información sobre la liga o el proyecto, contacta con el equipo de desarrollo.
+Para más información sobre la liga o el proyecto, contacta con el equipo de desarrollo en timecupleague@gmail.com
 
 ---
 

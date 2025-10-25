@@ -1,117 +1,53 @@
 ---
 import Container from '../ui/Container.astro';
 import Section from '../ui/Section.astro';
+import { howItWorksContent } from '../../content/league';
 ---
 
-<Section id="como-funciona">
+<Section id="como-funciona" class="bg-gradient-to-b to-primary-800 from-indigo-900">
   <Container>
-    <div class="text-center mb-16">
-      <h2 class="heading-2 mb-6">¿Cómo funciona?</h2>
+    <div class="text-center mb-16 text-white">
+      <h2 class="heading-2 mb-6">{howItWorksContent.title}</h2>
       <p class="text-large max-w-3xl mx-auto">
-        Un proceso simple y transparente que te permite competir desde tu box
-        favorito.
+        {howItWorksContent.subtitle}
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-      <!-- Step 1 -->
-      <div class="text-center">
-        <div
-          class="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4"
-        >
-          1
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-white">
+      {howItWorksContent.steps.map((step) => (
+        <div class="text-center">
+          <div
+            class="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4"
+          >
+            {step.number}
+          </div>
+          <h3 class="heading-3 mb-4">{step.title}</h3>
+          <p class="text-gray-300">
+            {step.description}
+          </p>
         </div>
-        <h3 class="heading-3 mb-4">Inscripción</h3>
-        <p class="text-gray-600">
-          Forma tu equipo de 3 atletas y elige tu categoría. El proceso es
-          rápido y sencillo.
-        </p>
-      </div>
-
-      <!-- Step 2 -->
-      <div class="text-center">
-        <div
-          class="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4"
-        >
-          2
-        </div>
-        <h3 class="heading-3 mb-4">WOD Semanal</h3>
-        <p class="text-gray-600">
-          Cada domingo se publica un nuevo WOD. Tienes 11 días para grabarlo y
-          enviarlo.
-        </p>
-      </div>
-
-      <!-- Step 3 -->
-      <div class="text-center">
-        <div
-          class="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4"
-        >
-          3
-        </div>
-        <h3 class="heading-3 mb-4">Grabación</h3>
-        <p class="text-gray-600">
-          Graba tu WOD siguiendo las normas establecidas. La app te guiará en el
-          proceso.
-        </p>
-      </div>
-
-      <!-- Step 4 -->
-      <div class="text-center">
-        <div
-          class="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4"
-        >
-          4
-        </div>
-        <h3 class="heading-3 mb-4">Resultados</h3>
-        <p class="text-gray-600">
-          Los jueces revisan los vídeos y se publica el ranking. ¡Ve subiendo
-          posiciones!
-        </p>
-      </div>
+      ))}
     </div>
 
-    <!-- Timeline -->
-    <div class="mt-16 bg-gray-50 rounded-xl p-8">
-      <h3 class="heading-3 text-center mb-8">Cronograma Semanal</h3>
+   
+    <div class="mt-16 border-t border-b border-white rounded-xl p-8">
+      <h3 class="heading-3 text-center mb-8 text-white">{howItWorksContent.timeline.title}</h3>
 
       <div class="grid grid-cols-1 md:grid-cols-7 gap-4 text-center">
-        <div class="bg-white rounded-lg p-4 shadow-sm">
-          <div class="font-semibold text-primary-500 mb-2">Domingo</div>
-          <div class="text-sm text-gray-600">Publicación WOD</div>
-        </div>
-
-        <div class="bg-white rounded-lg p-4 shadow-sm">
-          <div class="font-semibold text-gray-700 mb-2">Lunes</div>
-          <div class="text-sm text-gray-600">Entrenamiento</div>
-        </div>
-
-        <div class="bg-white rounded-lg p-4 shadow-sm">
-          <div class="font-semibold text-gray-700 mb-2">Martes</div>
-          <div class="text-sm text-gray-600">Entrenamiento</div>
-        </div>
-
-        <div
-          class="bg-white rounded-lg p-4 shadow-sm border-2 border-primary-200"
-        >
-          <div class="font-semibold text-primary-500 mb-2">Miércoles</div>
-          <div class="text-sm text-gray-600">Límite entrega</div>
-        </div>
-
-        <div class="bg-white rounded-lg p-4 shadow-sm">
-          <div class="font-semibold text-gray-700 mb-2">Jueves</div>
-          <div class="text-sm text-gray-600">Revisión</div>
-        </div>
-
-        <div class="bg-white rounded-lg p-4 shadow-sm">
-          <div class="font-semibold text-gray-700 mb-2">Viernes</div>
-          <div class="text-sm text-gray-600">Revisión</div>
-        </div>
-
-        <div class="bg-white rounded-lg p-4 shadow-sm">
-          <div class="font-semibold text-gray-700 mb-2">Sábado</div>
-          <div class="text-sm text-gray-600">Revisión</div>
-        </div>
+        {howItWorksContent.timeline.week1.map((day) => (
+          <div class={`bg-white rounded-lg p-4 shadow-sm ${day.borderColor ? `border-2 ${day.borderColor}` : ''}`}>
+            <div class={`font-semibold mb-2 ${day.textColor || 'text-gray-700'}`}>{day.day}</div>
+            <div class="text-sm text-gray-600">{day.activity}</div>
+          </div>
+        ))}
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-7 gap-4 text-center pt-3">
+        {howItWorksContent.timeline.week2.map((day) => (
+          <div class={`bg-white rounded-lg p-4 shadow-sm ${day.borderColor ? `border-2 ${day.borderColor}` : ''}`}>
+            <div class={`font-semibold mb-2 ${day.textColor || 'text-gray-700'}`}>{day.day}</div>
+            <div class="text-sm text-gray-600">{day.activity}</div>
+          </div>
+        ))}
       </div>
     </div>
   </Container>
