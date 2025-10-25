@@ -200,7 +200,7 @@ npm run build
 1. Crea una rama para tu feature: `git checkout -b feature/nueva-funcionalidad`
 2. Realiza tus cambios y commits: `git commit -m 'Agrega nueva funcionalidad'`
 3. Push a la rama: `git push origin feature/nueva-funcionalidad`
-4. Abre un Pull Request
+4. Abre un Pull Request.
 
 ## 📞 Contacto
 
