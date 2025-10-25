@@ -29,22 +29,46 @@ export interface LeagueRule {
   subsections?: string[]
 }
 
+export type LeagueStandard = Record<CrossfitMovement, CategoryStandard>
+
+export type CrossfitCategory = 'rx' | 'intermediate' | 'scaled'
+
+export type CategoryStandard = Record<CrossfitCategory, string | boolean>
+
+export type CrossfitMovement =
+  | 'T2B'
+  | 'PULL UPS'
+  | 'C2B'
+  | 'BMU'
+  | 'RMU'
+  | 'HSPU'
+  | 'HSW'
+  | 'Rope Climb'
+  | 'Legless RC'
+  | 'DU'
+  | 'Wall Climb'
+  | 'C&J'
+  | 'Snatch'
+  | 'DB'
+  | 'KTB'
+  | 'Sandbag'
+
 export const leagueCategories: LeagueCategory[] = [
   {
     id: 'rx',
     name: 'RX (Avanzado)',
-    description: 'Para atletas con experiencia avanzada en CrossFit',
+    description: 'Para atletas con experiencia avanzada en Cross Training',
     requirements: [
       'Movimientos complejos sin escalar',
       'Peso RX en todos los ejercicios',
       'Técnica depurada en movimientos gimnásticos',
-      'Experiencia mínima de 2 años en CrossFit',
+      'Experiencia mínima de 2 años en Cross Training',
     ],
   },
   {
     id: 'intermedio',
     name: 'Intermedio',
-    description: 'Para atletas con nivel medio en CrossFit',
+    description: 'Para atletas con nivel medio en Cross Training',
     requirements: [
       'Movimientos básicos dominados',
       'Peso intermedio en ejercicios',
@@ -55,7 +79,7 @@ export const leagueCategories: LeagueCategory[] = [
   {
     id: 'escalado',
     name: 'Escalado (Iniciación)',
-    description: 'Para atletas que están comenzando en CrossFit',
+    description: 'Para atletas que están comenzando en Cross Training',
     requirements: [
       'Movimientos escalados según capacidad',
       'Peso adaptado al nivel individual',
@@ -155,7 +179,7 @@ export const leagueValues: LeagueValue[] = [
   },
   {
     id: 'passion',
-    title: 'Pasión por el CrossFit',
+    title: 'Pasión por el Cross Training',
     description: 'La motivación que nos une y que da sentido a la liga.',
   },
 ]
@@ -165,7 +189,7 @@ export const leagueRules: LeagueRule[] = [
     id: 'what-is-league',
     title: '¿Qué es la Liga?',
     content:
-      'La Liga de CrossFit Norte Madrid es una competición continua pensada para atletas amateurs de todos los niveles. A diferencia de las competiciones tradicionales de un solo fin de semana, la liga ofrece temporadas de 3 meses, con enfrentamientos regulares y posibilidad de ascender o descender de categoría, en formato semipresencial.',
+      'La Liga de Cross Training Norte Madrid es una competición continua pensada para atletas amateurs de todos los niveles. A diferencia de las competiciones tradicionales de un solo fin de semana, la liga ofrece temporadas de 3 meses, con enfrentamientos regulares y posibilidad de ascender o descender de categoría, en formato semipresencial.',
   },
   {
     id: 'league-format',
@@ -277,11 +301,222 @@ export const leagueInfo = {
   name: 'Time Cup League',
   tagline: 'Compite todo el año, no solo un fin de semana',
   description:
-    'Una liga online y presencial de CrossFit en formato competitivo, con seasons de 3 meses, categorías por nivel y equipos de 3 personas.',
+    'Una liga online y presencial de Cross Training en formato competitivo, con seasons de 3 meses, categorías por nivel y equipos de 3 personas.',
   seasonDuration: '3 meses',
-  teamSize: '3 atletas (2 hombres + 1 mujer)',
+  teamSize: '3 atletas 👨👨👩',
   categories: leagueCategories.length,
   onlineJornadas: 5,
   presentialJornadas: 1,
   totalJornadas: 6,
+}
+
+export interface HowItWorksStep {
+  id: string
+  number: number
+  title: string
+  description: string
+}
+
+export interface HowItWorksTimelineDay {
+  day: string
+  activity: string
+  isSpecial?: boolean
+  borderColor?: string
+  textColor?: string
+}
+
+export interface HowItWorks {
+  title: string
+  subtitle: string
+  steps: HowItWorksStep[]
+  timeline: {
+    title: string
+    week1: HowItWorksTimelineDay[]
+    week2: HowItWorksTimelineDay[]
+  }
+}
+
+export const howItWorksContent: HowItWorks = {
+  title: '¿Cómo funciona?',
+  subtitle: 'Un proceso simple y transparente que te permite competir desde tu box favorito.',
+  steps: [
+    {
+      id: 'inscription',
+      number: 1,
+      title: 'Inscripción',
+      description: 'Forma tu equipo de 3 atletas y elige tu categoría. El proceso es rápido y sencillo.',
+    },
+    {
+      id: 'weekly-wod',
+      number: 2,
+      title: 'WOD Semanal',
+      description: 'Cada domingo se publica un nuevo WOD. Tienes 11 días para grabarlo y enviarlo.',
+    },
+    {
+      id: 'recording',
+      number: 3,
+      title: 'Grabación',
+      description: 'Graba tu WOD siguiendo las normas establecidas. La app te guiará en el proceso.',
+    },
+    {
+      id: 'results',
+      number: 4,
+      title: 'Resultados',
+      description: 'Los jueces revisan los vídeos y se publica el ranking. ¡Ve subiendo posiciones!',
+    },
+  ],
+  timeline: {
+    title: 'Cronograma WOD',
+    week1: [
+      {
+        day: 'Domingo',
+        activity: 'Publicación WOD',
+        isSpecial: true,
+        borderColor: 'border-indigo-600',
+        textColor: 'text-primary-500',
+      },
+      {
+        day: 'Lunes',
+        activity: 'Entrenamiento',
+      },
+      {
+        day: 'Martes',
+        activity: 'Entrenamiento',
+      },
+      {
+        day: 'Miércoles',
+        activity: 'Entrenamiento',
+      },
+      {
+        day: 'Jueves',
+        activity: 'Entrenamiento',
+      },
+      {
+        day: 'Viernes',
+        activity: 'Entrenamiento',
+      },
+      {
+        day: 'Sábado',
+        activity: 'Entrenamiento',
+      },
+    ],
+    week2: [
+      {
+        day: 'Domingo',
+        activity: 'Entrenamiento',
+      },
+      {
+        day: 'Lunes',
+        activity: 'Entrenamiento',
+      },
+      {
+        day: 'Martes',
+        activity: 'Entrenamiento',
+      },
+      {
+        day: 'Miércoles',
+        activity: 'Límite entrega vídeo',
+        isSpecial: true,
+        borderColor: 'border-primary-500',
+        textColor: 'text-primary-500',
+      },
+      {
+        day: 'Jueves',
+        activity: 'Revisión',
+      },
+      {
+        day: 'Viernes',
+        activity: 'Revisión',
+      },
+      {
+        day: 'Sábado',
+        activity: 'Publicación resultados',
+        isSpecial: true,
+        borderColor: 'border-secondary-600',
+      },
+    ],
+  },
+}
+
+export const leagueStandards: LeagueStandard = {
+  T2B: {
+    rx: true,
+    intermediate: true,
+    scaled: 'K2C',
+  },
+  'PULL UPS': {
+    rx: true,
+    intermediate: true,
+    scaled: 'Banded PU',
+  },
+  C2B: {
+    rx: true,
+    intermediate: true,
+    scaled: false,
+  },
+  BMU: {
+    rx: true,
+    intermediate: 'Al menos un atleta',
+    scaled: false,
+  },
+  RMU: {
+    rx: true,
+    intermediate: false,
+    scaled: false,
+  },
+  HSPU: {
+    rx: true,
+    intermediate: true,
+    scaled: 'PIKE PUSH UP',
+  },
+  HSW: {
+    rx: true,
+    intermediate: false,
+    scaled: false,
+  },
+  'Rope Climb': {
+    rx: true,
+    intermediate: true,
+    scaled: 'Al menos un atleta',
+  },
+  'Legless RC': {
+    rx: true,
+    intermediate: 'Al menos un atleta',
+    scaled: false,
+  },
+  DU: {
+    rx: true,
+    intermediate: true,
+    scaled: 'SU',
+  },
+  'Wall Climb': {
+    rx: true,
+    intermediate: true,
+    scaled: true,
+  },
+  'C&J': {
+    rx: '90/60Kg',
+    intermediate: '70/45Kg',
+    scaled: '40/30Kg',
+  },
+  Snatch: {
+    rx: '70/45Kg',
+    intermediate: '50/35Kg',
+    scaled: '30/20Kg',
+  },
+  DB: {
+    rx: '25/17.5Kg',
+    intermediate: '22.5/15Kg',
+    scaled: '15/10Kg',
+  },
+  KTB: {
+    rx: '24/16Kg',
+    intermediate: '24/16Kg',
+    scaled: '16/12Kg',
+  },
+  Sandbag: {
+    rx: '75/50Kg',
+    intermediate: '60/40Kg',
+    scaled: '30/20Kg',
+  },
 }

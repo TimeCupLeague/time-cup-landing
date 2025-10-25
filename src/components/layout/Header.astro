@@ -1,15 +1,16 @@
 ---
 import Button from '../ui/Button.astro';
 import Container from '../ui/Container.astro';
+import logoTimecup from '../../assets/logo_timecup_white.svg';
 ---
 
-<header class="bg-white shadow-sm sticky top-0 z-50">
+<header class="bg-black/80 shadow-sm sticky top-0 z-50">
   <Container>
     <div class="flex items-center justify-between py-4">
       <!-- Logo -->
       <div class="flex items-center">
-        <a href="/" class="text-2xl font-bold text-primary-500">
-          Time Cup League
+        <a href="/" aria-label="Time Cup League">
+          <img src={logoTimecup.src} alt="Time Cup League" class="h-8 w-auto" />
         </a>
       </div>
 
@@ -17,25 +18,25 @@ import Container from '../ui/Container.astro';
       <nav class="hidden md:flex items-center space-x-8">
         <a
           href="/#caracteristicas"
-          class="text-text-secondary hover:text-primary-500 transition-colors"
+          class="text-white hover:text-primary-500 transition-colors"
         >
           Características
         </a>
         <a
           href="/#categorias"
-          class="text-text-secondary hover:text-primary-500 transition-colors"
+          class="text-white hover:text-primary-500 transition-colors"
         >
           Categorías
         </a>
         <a
           href="/#como-funciona"
-          class="text-text-secondary hover:text-primary-500 transition-colors"
+          class="text-white hover:text-primary-500 transition-colors"
         >
           ¿Cómo funciona?
         </a>
         <a
           href="/bases"
-          class="text-text-secondary hover:text-primary-500 transition-colors"
+          class="text-white hover:text-primary-500 transition-colors"
         >
           Bases
         </a>

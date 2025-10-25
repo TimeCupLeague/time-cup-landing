@@ -5,12 +5,12 @@ import Section from '../ui/Section.astro';
 import { leagueFeatures } from '../../content/league';
 ---
 
-<Section id="caracteristicas">
+<Section id="caracteristicas" class="bg-gradient-to-b from-primary-800 to-secondary-800">
   <Container>
-    <div class="text-center mb-16">
+    <div class="text-center mb-16 text-white">
       <h2 class="heading-2 mb-6">¿Por qué elegir nuestra liga?</h2>
       <p class="text-large max-w-3xl mx-auto">
-        Una experiencia competitiva única que combina la pasión del CrossFit con
+        Una experiencia competitiva única que combina la pasión del Cross Training con
         la innovación del formato online y presencial.
       </p>
     </div>
@@ -18,7 +18,7 @@ import { leagueFeatures } from '../../content/league';
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {
         leagueFeatures.map(feature => (
-          <Card class="text-center group">
+          <Card class="card_opacity text-center group">
             <div class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-200">
               {feature.icon}
             </div>

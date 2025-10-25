@@ -1,0 +1,23 @@
+---
+import imageIndex from '../../assets/imageIndex_borderBlack.jpg'
+---
+<section class="">
+  <div
+    class="w-full h-[77vh]"
+    style={`background-image: url(${imageIndex.src}); background-size: cover;`}
+  >
+    <!-- Gradiente de transparente a negro -->
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black"></div>
+    
+    <!-- Contenido del texto -->
+    <div class="relative z-10 h-full flex flex-col items-center p-14 md:p-14">
+      <div class="text-white text-5xl md:text-5xl font-bold  text-center">
+        <p class="text-white leading-relaxed mb-6 pl-6">
+          DOMINA CADA <span class="text-secondary-500 text-6xl">WOD</span><br />
+          SUBE DE CATEGORÍA<br />
+          <span class="text-primary-500 text-5xl">CONQUISTA</span> EL PODIO
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
