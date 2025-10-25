@@ -310,6 +310,123 @@ export const leagueInfo = {
   totalJornadas: 6,
 }
 
+export interface HowItWorksStep {
+  id: string
+  number: number
+  title: string
+  description: string
+}
+
+export interface HowItWorksTimelineDay {
+  day: string
+  activity: string
+  isSpecial?: boolean
+  borderColor?: string
+  textColor?: string
+}
+
+export const howItWorksContent = {
+  title: '¿Cómo funciona?',
+  subtitle: 'Un proceso simple y transparente que te permite competir desde tu box favorito.',
+  steps: [
+    {
+      id: 'inscription',
+      number: 1,
+      title: 'Inscripción',
+      description: 'Forma tu equipo de 3 atletas y elige tu categoría. El proceso es rápido y sencillo.',
+    },
+    {
+      id: 'weekly-wod',
+      number: 2,
+      title: 'WOD Semanal',
+      description: 'Cada domingo se publica un nuevo WOD. Tienes 11 días para grabarlo y enviarlo.',
+    },
+    {
+      id: 'recording',
+      number: 3,
+      title: 'Grabación',
+      description: 'Graba tu WOD siguiendo las normas establecidas. La app te guiará en el proceso.',
+    },
+    {
+      id: 'results',
+      number: 4,
+      title: 'Resultados',
+      description: 'Los jueces revisan los vídeos y se publica el ranking. ¡Ve subiendo posiciones!',
+    },
+  ],
+  timeline: {
+    title: 'Cronograma WOD',
+    week1: [
+      {
+        day: 'Domingo',
+        activity: 'Publicación WOD',
+        isSpecial: true,
+        borderColor: 'border-indigo-600',
+        textColor: 'text-primary-500',
+      },
+      {
+        day: 'Lunes',
+        activity: 'Entrenamiento',
+      },
+      {
+        day: 'Martes',
+        activity: 'Entrenamiento',
+      },
+      {
+        day: 'Miércoles',
+        activity: 'Entrenamiento',
+      },
+      {
+        day: 'Jueves',
+        activity: 'Entrenamiento',
+      },
+      {
+        day: 'Viernes',
+        activity: 'Entrenamiento',
+      },
+      {
+        day: 'Sábado',
+        activity: 'Entrenamiento',
+      },
+    ],
+    week2: [
+      {
+        day: 'Domingo',
+        activity: 'Entrenamiento',
+      },
+      {
+        day: 'Lunes',
+        activity: 'Entrenamiento',
+      },
+      {
+        day: 'Martes',
+        activity: 'Entrenamiento',
+      },
+      {
+        day: 'Miércoles',
+        activity: 'Límite entrega vídeo',
+        isSpecial: true,
+        borderColor: 'border-primary-500',
+        textColor: 'text-primary-500',
+      },
+      {
+        day: 'Jueves',
+        activity: 'Revisión',
+      },
+      {
+        day: 'Viernes',
+        activity: 'Revisión',
+      },
+      {
+        day: 'Sábado',
+        activity: 'Publicación resultados',
+        isSpecial: true,
+        borderColor: 'border-secondary-600',
+      },
+    ],
+  },
+}
+
 export const leagueStandards: LeagueStandard = {
   T2B: {
     rx: true,
