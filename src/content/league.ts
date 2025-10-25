@@ -325,7 +325,18 @@ export interface HowItWorksTimelineDay {
   textColor?: string
 }
 
-export const howItWorksContent = {
+export interface HowItWorks {
+  title: string
+  subtitle: string
+  steps: HowItWorksStep[]
+  timeline: {
+    title: string
+    week1: HowItWorksTimelineDay[]
+    week2: HowItWorksTimelineDay[]
+  }
+}
+
+export const howItWorksContent: HowItWorks = {
   title: '¿Cómo funciona?',
   subtitle: 'Un proceso simple y transparente que te permite competir desde tu box favorito.',
   steps: [
