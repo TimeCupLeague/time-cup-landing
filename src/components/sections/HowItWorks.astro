@@ -1,54 +1,30 @@
 ---
-import Container from '../ui/Container.astro';
-import Section from '../ui/Section.astro';
 import { howItWorksContent } from '../../content/league';
 ---
 
-<Section id="como-funciona" class="bg-gradient-to-b to-primary-800 from-indigo-900">
-  <Container>
-    <div class="text-center mb-16 text-white">
-      <h2 class="heading-2 mb-6">{howItWorksContent.title}</h2>
-      <p class="text-large max-w-3xl mx-auto">
-        {howItWorksContent.subtitle}
-      </p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-white">
-      {howItWorksContent.steps.map((step) => (
-        <div class="text-center">
-          <div
-            class="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4"
-          >
-            {step.number}
-          </div>
-          <h3 class="heading-3 mb-4">{step.title}</h3>
-          <p class="text-gray-300">
-            {step.description}
-          </p>
+<div class="py-20 sm:py-32 bg-white/5" id="how-it-works">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl lg:text-center">
+            <h2 class="text-base font-semibold leading-7 text-secondary-500">{howItWorksContent.title}</h2>
+            <p class="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">Experiencia online y Presencial</p>
+            <p class="mt-6 text-lg leading-8 text-gray-300">{howItWorksContent.subtitle}</p>
         </div>
-      ))}
+        <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
+            <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
+                
+                {howItWorksContent.steps.map((step) => (
+                    <div class="relative pl-16">
+                    <dt class="text-2xl font-semibold leading-7 text-white">
+                        <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-secondary-500">
+                            <span class="text-2xl">{step.number}</span>
+                        </div>
+                        {step.title}
+                    </dt>
+                    <dd class="mt-2 text-base leading-7 text-gray-300">{step.description}</dd>
+                    </div>
+                  ))}
+                
+            </dl>
+        </div>
     </div>
-
-   
-    <div class="mt-16 border-t border-b border-white rounded-xl p-8">
-      <h3 class="heading-3 text-center mb-8 text-white">{howItWorksContent.timeline.title}</h3>
-
-      <div class="grid grid-cols-1 md:grid-cols-7 gap-4 text-center">
-        {howItWorksContent.timeline.week1.map((day) => (
-          <div class={`bg-white rounded-lg p-4 shadow-sm ${day.borderColor ? `border-2 ${day.borderColor}` : ''}`}>
-            <div class={`font-semibold mb-2 ${day.textColor || 'text-gray-700'}`}>{day.day}</div>
-            <div class="text-sm text-gray-600">{day.activity}</div>
-          </div>
-        ))}
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-7 gap-4 text-center pt-3">
-        {howItWorksContent.timeline.week2.map((day) => (
-          <div class={`bg-white rounded-lg p-4 shadow-sm ${day.borderColor ? `border-2 ${day.borderColor}` : ''}`}>
-            <div class={`font-semibold mb-2 ${day.textColor || 'text-gray-700'}`}>{day.day}</div>
-            <div class="text-sm text-gray-600">{day.activity}</div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </Container>
-</Section>
+</div>

@@ -1,114 +1,29 @@
 ---
-import Button from '../ui/Button.astro';
-import Container from '../ui/Container.astro';
 import logoTimecup from '../../assets/logo_timecup_white.svg';
+
 ---
 
-<header class="bg-black/80 shadow-sm sticky top-0 z-50">
-  <Container>
-    <div class="flex items-center justify-between py-4">
-      <!-- Logo -->
-      <div class="flex items-center">
-        <a href="/" aria-label="Time Cup League">
-          <img src={logoTimecup.src} alt="Time Cup League" class="h-8 w-auto" />
-        </a>
-      </div>
-
-      <!-- Navigation -->
-      <nav class="hidden md:flex items-center space-x-8">
-        <a
-          href="/#caracteristicas"
-          class="text-white hover:text-primary-500 transition-colors"
-        >
-          Características
-        </a>
-        <a
-          href="/#categorias"
-          class="text-white hover:text-primary-500 transition-colors"
-        >
-          Categorías
-        </a>
-        <a
-          href="/#como-funciona"
-          class="text-white hover:text-primary-500 transition-colors"
-        >
-          ¿Cómo funciona?
-        </a>
-        <a
-          href="/bases"
-          class="text-white hover:text-primary-500 transition-colors"
-        >
-          Bases
-        </a>
-      </nav>
-
-      <!-- CTA Button -->
-      <div class="hidden md:block">
-        <Button href="/#inscripcion" size="sm"> Inscribirse </Button>
-      </div>
-
-      <!-- Mobile menu button -->
-      <button class="md:hidden p-2" id="mobile-menu-button">
-        <svg
-          class="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-      </button>
+<header class="fixed top-0 z-50 w-full bg-black/80 backdrop-blur-md border-b border-white/10">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex h-16 items-center justify-between">
+            <div class="flex items-center">
+                <div class="flex items-center">
+                    <a href="/" aria-label="Time Cup League">
+                    <img src={logoTimecup.src} alt="Time Cup League" class="h-8 w-auto" />
+                    </a>
+                </div>
+            </div>
+            <div class="hidden md:flex md:items-center md:space-x-8 text-white">
+                <a class="hover:text-primary-500 transition-colors" href="/#characteristics">Características</a>
+                <a class="hover:text-primary-500 transition-colors" href="/#how-it-works">Cómo funciona</a>
+                <a class="hover:text-primary-500 transition-colors" href="/#standards">Categorías</a>
+                <a class="hover:text-primary-500 transition-colors" href="/bases">Bases</a>
+            </div>
+            <button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 px-4 bg-primary-500 text-white text-sm font-bold tracking-wider hover:bg-primary/90 transition-all duration-300 ease-in-out transform hover:scale-105">
+                  INSCRÍBETE
+            </button>
+        </div>
     </div>
-
-    <!-- Mobile menu -->
-    <div class="md:hidden hidden" id="mobile-menu">
-      <div class="py-4 border-t border-gray-200">
-        <nav class="flex flex-col space-y-4">
-          <a
-            href="/#caracteristicas"
-            class="text-text-secondary hover:text-primary-500 transition-colors"
-          >
-            Características
-          </a>
-          <a
-            href="/#categorias"
-            class="text-text-secondary hover:text-primary-500 transition-colors"
-          >
-            Categorías
-          </a>
-          <a
-            href="/#como-funciona"
-            class="text-text-secondary hover:text-primary-500 transition-colors"
-          >
-            ¿Cómo funciona?
-          </a>
-          <a
-            href="/bases"
-            class="text-text-secondary hover:text-primary-500 transition-colors"
-          >
-            Bases
-          </a>
-          <Button href="/#inscripcion" size="sm" class="w-full">
-            Inscribirse
-          </Button>
-        </nav>
-      </div>
-    </div>
-  </Container>
 </header>
 
-<script>
-  // Mobile menu toggle
-  const mobileMenuButton = document.getElementById('mobile-menu-button');
-  const mobileMenu = document.getElementById('mobile-menu');
-
-  if (mobileMenuButton && mobileMenu) {
-    mobileMenuButton.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-  }
-</script>
+    

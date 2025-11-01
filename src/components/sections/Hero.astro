@@ -1,78 +1,35 @@
----
-import Button from '../ui/Button.astro';
-import Container from '../ui/Container.astro';
-import Section from '../ui/Section.astro';
-import { leagueInfo } from '../../content/league';
----
-
-<Section background='primary' padding='sm' class="relative overflow-hidden bg-gradient-to-t to-black from-primary-800">
-  <!-- Background decoration -->
- 
-  <Container class="relative z-10">
-    <div class="text-center text-white">
-
-      <p class="text-4xl text-white font-bold mb-8 mx-auto animate-slide-up">
-        {leagueInfo.tagline.toUpperCase()}
-      </p>
-
-      <p class="text-2xl text-white/90 mb-12 max-w-2xl mx-auto animate-slide-up">
-        {leagueInfo.description}
-      </p>
-
-      <div
-        class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up"
-      >
-        <Button
-          variant="primary"
-          size="lg"
-          href="#inscripcion"
-          class="bg-white text-primary-500 hover:bg-primary-50 border-white"
-        >
-          Inscríbete Ahora
-        </Button>
-
-        <Button
-          
-          size="lg"
-          href="/bases"
-          class="text-white border-white hover:bg-white hover:text-primary-500"
-        >
-          Ver Bases
-        </Button>
-      </div>
-
-      <!-- Stats -->
-      <div
-        class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 pt-16 pb-16 border-t border-b border-white/20"
-      >
-        <div class="text-center">
-          <div class="text-3xl font-bold text-white mb-2">
-            {leagueInfo.seasonDuration}
-          </div>
-          <div class="text-white/80">Duración</div>
-        </div>
-
-        <div class="text-center">
-          <div class="text-3xl font-bold text-white mb-2">
-            {leagueInfo.teamSize}
-          </div>
-          <div class="text-white/80">Equipo</div>
-        </div>
-
-        <div class="text-center">
-          <div class="text-3xl font-bold text-white mb-2">
-            {leagueInfo.categories}
-          </div>
-          <div class="text-white/80">Categorías</div>
-        </div>
-
-        <div class="text-center">
-          <div class="text-3xl font-bold text-white mb-2">
-            {leagueInfo.totalJornadas}
-          </div>
-          <div class="text-white/80">Jornadas</div>
-        </div>
-      </div>
+<section>
+<div class="relative bg-grid">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black"></div>
+    <div class="relative min-h-[60vh] md:min-h-[80vh] flex flex-col gap-8 items-center justify-center text-center p-4">
+    <div class="absolute inset-0 bg-cover bg-center opacity-20" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA0dhzX9MrWkZzzYYWv3_x7mU_TTjaPGo05UXoNutm8jDTSpNmAFi2DBtfHeTWSksEocyWFwNTfSu9YlBFrxGvfUiRO8h5d39ERiNY-wAVFJfMMePZmiZRJdklanwiOjwE7S__tbxXjvFeQ-6OASKKRVDK4m23bhyZwY-qzunLuZQMlWz-CASksyA7JzBJQnkBAcXQf8vd7aQMKFrRECe2MT_MbTfZ5__qSbDSgEC42qCuMntHhstT36wh9sW8u9UoAc0pRcDbymcPS");'></div>
+    <div class="relative z-10 flex flex-col gap-4">
+    <h1 class="text-white text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-tight text-glow">
+    TU DESAFÍO CROSS TRAINING COMIENZA. 
+                    </h1>
+    <p class="text-white/80 text-lg md:text-xl max-w-2xl mx-auto">
+                      3 Meses. 6 Jornadas. 2 Compañeros. 1 Campeón.
+                    </p>
     </div>
-  </Container>
-</Section>
+    <div class="relative z-10 mt-6">
+    <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-14 px-8 bg-gradient-to-r from-secondary-500 to-primary-500 text-white text-lg font-bold tracking-wider hover:scale-105 hover:shadow-2xl hover:shadow-accent-purple/50 transition-all duration-300 ease-in-out">
+    <span class="truncate">Inscribirme</span>
+    </button>
+    </div>
+    </div>
+    </div>
+</section>
+
+<style>
+    
+    .text-glow {
+    text-shadow: 0 0 8px text-primary, 0 0 20px text-accent-blue;
+  }
+  .bg-grid {
+    background-image:
+        linear-gradient(to right, text-secondary-500/0.1 1px, transparent 1px),
+        linear-gradient(to bottom, text-secondary-500/0.1 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+</style>

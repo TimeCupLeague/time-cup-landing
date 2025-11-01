@@ -2,32 +2,24 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
-import Presentation from '../components/sections/Presentation.astro'
-import Hero from '../components/sections/Hero.astro';
+import Hero from '../components/sections/Hero.astro'
 import Features from '../components/sections/Features.astro';
 import Categories from '../components/sections/Categories.astro';
 import HowItWorks from '../components/sections/HowItWorks.astro';
 import CTA from '../components/sections/CTA.astro';
 
+
 ---
 
 <Layout>
+
   <Header />
   <main>
-    <Presentation />
-      <Hero />
-      <Features />
-      <Categories />
-      <HowItWorks />
-      <CTA />
-
+    <Hero />
+    <Features />
+    <HowItWorks />
+    <Categories />
+    <CTA />
   </main>
   <Footer />
 </Layout>
-
-<style>
-  main {
-    background-color: #000;
-  }
-
-  </style>
