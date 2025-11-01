@@ -54,15 +54,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
     <!-- Styles -->
   </head>
-  <body class="min-h-screen bg-black">
+  <body class="bg-black font-display text-white">
+    <div class="relative flex h-auto min-h-screen w-full flex-col dark group/design-root overflow-x-hidden">
     <slot />
+    </div>
   </body>
 </html>
-
-<style>
-  html,
-  body {
-    margin: 0;
-    width: 100%;
-  }
-</style>

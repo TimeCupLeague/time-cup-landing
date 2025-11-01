@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+
 /* Custom base styles */
 /* Cargar fuente local Geist en varias variantes */
 /* Eliminamos import remoto de Google Fonts y cualquier @import de TTF directo */
@@ -68,6 +69,7 @@
 
 /* Custom color variables for Tailwind v4 */
 @theme {
+  --color-primary: #ff00a8;
   --color-primary-50: #faf5fc;
   --color-primary-100: #f3e8f8;
   --color-primary-200: #e8d1f0;
@@ -89,6 +91,8 @@
   --color-secondary-700: #cc0f56;
   --color-secondary-800: #a80f48;
   --color-secondary-900: #8c113e;
+
+  --color-tertiary: #d353ba;
 
   --color-accent-50: #f8f4fb;
   --color-accent-100: #f0e8f6;
@@ -199,6 +203,9 @@ body {
   position: relative;
   transform: translate(0, 0);
   margin: 0;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .close-button {
@@ -208,8 +215,71 @@ body {
   z-index: 10;
 }
 
+.modal-header {
+  @apply flex-shrink-0 bg-white;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
 .modal-title {
   @apply text-2xl font-bold text-gray-900 mb-8 pt-10 px-10;
+}
+
+.modal-body {
+  @apply flex-1 overflow-y-auto;
+  position: relative;
+}
+
+.modal-body::after {
+  content: '';
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  background: linear-gradient(transparent, rgba(255, 255, 255, 0.8), white);
+  pointer-events: none;
+  z-index: 1;
+  box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.1);
+  color: #666;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: bold;
+  z-index: 2;
+  animation: bounce 2s infinite;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+  cursor: pointer;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-5px);
+  }
+  60% {
+    transform: translateY(-3px);
+  }
 }
 
 .table-container {
@@ -234,4 +304,43 @@ body {
 
 .standards-table tr:last-child td {
   @apply border-b-0;
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow:
+      0 0 8px text-primary,
+      0 0 20px text-accent-blue;
+  }
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, text-secondary-500/0.1 1px, transparent 1px),
+      linear-gradient(to bottom, text-secondary-500/0.1 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+}
+
+/* fallback */
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/materialsymbolsoutlined/v290/kJF1BvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oDMzByHX9rA6RzaxHMPdY43zj-jCxv3fzvRNU22ZXGJpEpjC_1v-p_4MrImHCIJIZrDCvHOejbd5zrDAt.woff2)
+    format('woff2');
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 30px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
 }

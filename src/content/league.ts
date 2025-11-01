@@ -36,21 +36,21 @@ export type CrossfitCategory = 'rx' | 'intermediate' | 'scaled'
 export type CategoryStandard = Record<CrossfitCategory, string | boolean>
 
 export type CrossfitMovement =
-  | 'T2B'
-  | 'PULL UPS'
-  | 'C2B'
-  | 'BMU'
-  | 'RMU'
-  | 'HSPU'
-  | 'HSW'
+  | 'Toes To Bar'
+  | 'Pull Up'
+  | 'Chest To Bar'
+  | 'Bar Muscle-Up'
+  | 'Ring Muscle-Up'
+  | 'Hand Stand Push Up'
+  | 'Hand Stand Walk'
   | 'Rope Climb'
-  | 'Legless RC'
-  | 'DU'
+  | 'Legless Rope Climb'
+  | 'Double Unders'
   | 'Wall Climb'
-  | 'C&J'
+  | 'Clean & Jerk'
   | 'Snatch'
-  | 'DB'
-  | 'KTB'
+  | 'Dumbbell'
+  | 'Kettlebell'
   | 'Sandbag'
 
 export const leagueCategories: LeagueCategory[] = [
@@ -94,39 +94,39 @@ export const leagueFeatures: LeagueFeature[] = [
     id: 'continuous-competition',
     title: 'Competición Continua',
     description: 'Temporadas de 3 meses con enfrentamientos regulares, no solo un fin de semana al año.',
-    icon: '🏆',
+    icon: 'calendar_month',
   },
   {
     id: 'team-format',
     title: 'Formato de Equipos',
     description:
       'Equipos de 3 atletas (2 hombres + 1 mujer) para fomentar la igualdad y el trabajo en equipo.',
-    icon: '👥',
+    icon: 'groups',
   },
   {
     id: 'online-presential',
     title: 'Online + Presencial',
     description: '5 jornadas online y 1 jornada presencial final para vivir la experiencia en comunidad.',
-    icon: '💻',
+    icon: 'linked_camera',
   },
   {
     id: 'transparent-scoring',
     title: 'Puntuación Transparente',
     description: 'Sistema de puntos claro con revisión de vídeos por jueces acreditados.',
-    icon: '📊',
+    icon: 'bar_chart',
   },
   {
     id: 'promotion-relegation',
     title: 'Ascensos y Descensos',
     description:
       'El ganador asciende de categoría y el último desciende, manteniendo la competitividad y haciendo el nivel más orgánico.',
-    icon: '⬆️⬇️',
+    icon: 'crown',
   },
   {
     id: 'gamification',
     title: 'Gamificación',
     description: 'Badges digitales, logros individuales y seguimiento de progreso personal.',
-    icon: '🎮',
+    icon: 'fitness_center',
   },
 ]
 
@@ -349,19 +349,19 @@ export const howItWorksContent: HowItWorks = {
     {
       id: 'weekly-wod',
       number: 2,
-      title: 'WOD Semanal',
+      title: 'WOD cada dos semanas',
       description: 'Cada domingo se publica un nuevo WOD. Tienes 11 días para grabarlo y enviarlo.',
     },
     {
       id: 'recording',
       number: 3,
-      title: 'Grabación',
+      title: 'Graba tu vídeo en la APP',
       description: 'Graba tu WOD siguiendo las normas establecidas. La app te guiará en el proceso.',
     },
     {
       id: 'results',
       number: 4,
-      title: 'Resultados',
+      title: 'Revisión y publicación de resultados',
       description: 'Los jueces revisan los vídeos y se publica el ranking. ¡Ve subiendo posiciones!',
     },
   ],
@@ -439,37 +439,37 @@ export const howItWorksContent: HowItWorks = {
 }
 
 export const leagueStandards: LeagueStandard = {
-  T2B: {
+  'Toes To Bar': {
     rx: true,
     intermediate: true,
-    scaled: 'K2C',
+    scaled: 'Knees To Chest',
   },
-  'PULL UPS': {
+  'Pull Up': {
     rx: true,
     intermediate: true,
-    scaled: 'Banded PU',
+    scaled: 'Banded Pull Up',
   },
-  C2B: {
+  'Chest To Bar': {
     rx: true,
     intermediate: true,
     scaled: false,
   },
-  BMU: {
+  'Bar Muscle-Up': {
     rx: true,
     intermediate: 'Al menos un atleta',
     scaled: false,
   },
-  RMU: {
+  'Ring Muscle-Up': {
     rx: true,
     intermediate: false,
     scaled: false,
   },
-  HSPU: {
+  'Hand Stand Push Up': {
     rx: true,
     intermediate: true,
-    scaled: 'PIKE PUSH UP',
+    scaled: 'Pike Push Up',
   },
-  HSW: {
+  'Hand Stand Walk': {
     rx: true,
     intermediate: false,
     scaled: false,
@@ -479,44 +479,44 @@ export const leagueStandards: LeagueStandard = {
     intermediate: true,
     scaled: 'Al menos un atleta',
   },
-  'Legless RC': {
+  'Legless Rope Climb': {
     rx: true,
     intermediate: 'Al menos un atleta',
     scaled: false,
   },
-  DU: {
+  'Double Unders': {
     rx: true,
     intermediate: true,
-    scaled: 'SU',
+    scaled: 'Single Unders',
   },
   'Wall Climb': {
     rx: true,
     intermediate: true,
     scaled: true,
   },
-  'C&J': {
-    rx: '90/60Kg',
-    intermediate: '70/45Kg',
-    scaled: '40/30Kg',
+  'Clean & Jerk': {
+    rx: '90/60 Kg',
+    intermediate: '70/45 Kg',
+    scaled: '40/30 Kg',
   },
   Snatch: {
-    rx: '70/45Kg',
-    intermediate: '50/35Kg',
-    scaled: '30/20Kg',
+    rx: '70/45 Kg',
+    intermediate: '50/35 Kg',
+    scaled: '30/20 Kg',
   },
-  DB: {
-    rx: '25/17.5Kg',
-    intermediate: '22.5/15Kg',
-    scaled: '15/10Kg',
+  Dumbbell: {
+    rx: '25/17.5 Kg',
+    intermediate: '22.5/15 kg',
+    scaled: '15/10 Kg',
   },
-  KTB: {
-    rx: '24/16Kg',
-    intermediate: '24/16Kg',
-    scaled: '16/12Kg',
+  Kettlebell: {
+    rx: '24/16 Kg',
+    intermediate: '24/16 Kg',
+    scaled: '16/12 Kg',
   },
   Sandbag: {
-    rx: '75/50Kg',
-    intermediate: '60/40Kg',
-    scaled: '30/20Kg',
+    rx: '75/50 Kg',
+    intermediate: '60/40 Kg',
+    scaled: '30/20 Kg',
   },
 }
