@@ -1,0 +1,81 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import Container from '../components/ui/Container.astro';
+import Section from '../components/ui/Section.astro';
+---
+
+<Layout>
+  <Header />
+  <main>
+    <!-- Hero Section -->
+    <Section background="gray" class="relative overflow-hidden border-b border-gray-800">
+      <div class="absolute inset-0 bg-black"></div>
+      <Container class="relative z-10">
+        <div class="text-center text-white">
+          <h1 class="heading-1 text-white mt-6">Términos y condiciones</h1>
+        </div>
+      </Container>
+    </Section>
+
+    <!-- Rules Section -->
+    <Section padding="md" class="bg-white/5">
+      <Container>
+        <div class="max-w-4xl mx-auto">
+          <div class="space-y-12">
+                <p><span class="text-xl">1. Objeto </span>
+                <br>El presente documento regula el acceso, navegación y uso del sitio web
+            www.timecupleague.com y de la aplicación móvil TimeCup League, titularidad de la
+            Asociación Deportiva TimeCup (en adelante, “TimeCup League”), con
+            domicilio en España y correo de contacto timecupleague@gmail.com.</p>
+                <p><span class="text-xl">2. Condiciones de acceso y uso</span>
+                    <br>El acceso y uso de la web o la aplicación atribuye la
+            condición de Usuario e implica la aceptación plena de las presentes condiciones. El
+            Usuario se compromete a hacer un uso adecuado de los servicios, absteniéndose de
+            emplearlos con fines ilícitos, contrarios a la buena fe o al orden público.</p>
+                <p><span class="text-xl">3. Registro de usuarios</span> 
+                    <br>Para participar en las competiciones o acceder a determinadas
+            funcionalidades, el Usuario deberá registrarse proporcionando datos veraces y completos.
+            El incumplimiento de esta obligación podrá implicar la suspensión o cancelación de la
+            cuenta.</p>
+                <p><span class="text-xl">4. Propiedad intelectual e industrial</span>
+                    <br>Todos los contenidos, marcas, logotipos, textos,
+            imágenes y software de TimeCup League están protegidos por los derechos de propiedad
+            intelectual correspondientes. Su uso no autorizado podrá ser objeto de acciones legales.</p>
+                <p><span class="text-xl">5. Participación y pagos</span> 
+                    <br>La participación en las ligas podrá requerir el pago de una cuota.
+            Los precios y condiciones se indicarán en cada caso antes de la inscripción. Las
+            transacciones se realizarán mediante plataformas seguras de terceros.</p>
+                <p><span class="text-xl">6. Exclusión de responsabilidad</span>
+                    <br>TimeCup League no se hace responsable de los daños o
+            perjuicios derivados del mal uso de la plataforma ni de la interpretación de los resultados
+            deportivos aportados por los usuarios.
+            Asimismo, la Asociación declina toda responsabilidad por posibles lesiones, accidentes o
+            daños físicos que pudieran sufrir los usuarios como consecuencia de la práctica de los
+            ejercicios o entrenamientos (WODs) propuestos en el marco de la Liga. Cada participante
+            declara disponer de la condición física necesaria y realizar las actividades bajo su propia
+            responsabilidad, asumiendo los riesgos inherentes al Cross Training y al deporte de alta
+            intensidad.
+            La organización no supervisa ni controla las condiciones de los centros deportivos donde
+            cada participante realice sus entrenamientos, por lo que no responderá de los incidentes
+            ocurridos en dichas instalaciones.</p>
+                <p><span class="text-xl">7. Suspensión del servicio</span>
+                    <br>La Asociación se reserva el derecho de suspender temporal o
+            definitivamente el acceso a la aplicación por motivos técnicos, de mantenimiento o
+            incumplimiento de los presentes términos.</p>
+            <p><span class="text-xl">8. Modificación de condiciones</span>
+                <br>TimeCup League podrá modificar en cualquier momento
+            las condiciones aquí expuestas, notificando a los usuarios los cambios sustanciales.</p>
+            <p><span class="text-xl">9. Legislación aplicable y jurisdicción</span>
+                <br>El presente contrato se rige por la legislación
+            española. Las partes se someten a los Juzgados y Tribunales del domicilio del usuario o,
+            en su defecto, de la ciudad donde radique la sede de la Asociación.</p>
+</div>
+</div>
+</Container>
+</Section>
+
+</main>
+<Footer />
+</Layout>

@@ -1,0 +1,71 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import Container from '../components/ui/Container.astro';
+import Section from '../components/ui/Section.astro';
+---
+
+<Layout>
+  <Header />
+  <main>
+    <!-- Hero Section -->
+    <Section background="gray" class="relative overflow-hidden border-b border-gray-800">
+      <div class="absolute inset-0 bg-black"></div>
+      <Container class="relative z-10">
+        <div class="text-center text-white">
+          <h1 class="heading-1 text-white mt-6">Política de privacidad</h1>
+        </div>
+      </Container>
+    </Section>
+
+    <!-- Rules Section -->
+    <Section padding="md" class="bg-white/5">
+      <Container>
+        <div class="max-w-4xl mx-auto">
+          <div class="space-y-12">
+            <p><span class="text-xl">1. Responsable del tratamiento </span>
+              <br>Asociación Deportiva TimeCup (timecupleague@gmail.com) con residencia en Madrid (España)</p>
+            <p><span class="text-xl">2. Finalidades del tratamiento </span>
+              <br>Los datos se tratan con el fin de: 
+              <br>- Gestionar el registro de
+            usuarios. 
+              <br>- Organizar la participación en las ligas y competiciones. 
+              <br>- Publicar clasificaciones, resultados y vídeos. 
+              <br>- Gestionar pagos e inscripciones. 
+              <br>- Atender consultas y comunicaciones.</p>
+            <p><span class="text-xl">3. Datos tratados</span>
+              <br>Nombre(opcional), apellidos(opcional), edad(opcional), correo electrónico(obligatorio), foto (opcional), ciudad(opcional), box(opcional), vídeos, resultados deportivos y equipo. 
+              <br>TimeCup League no solicita ni trata datos relativos al estado de salud de los usuarios. La Asociación no asume la supervisión ni la evaluación
+            de las condiciones físicas de los participantes. Cualquier práctica deportiva derivada de la
+            participación en la Liga se realiza bajo la exclusiva responsabilidad del usuario.</p>
+            <p><span class="text-xl">4. Base jurídica</span>
+              <br>El tratamiento se fundamenta en el consentimiento del interesado y la
+            ejecución de un contrato relativo a su participación en las competiciones.</p>
+            <p><span class="text-xl">5. Conservación de datos</span> 
+              <br>Los datos se conservarán mientras se mantenga la relación con
+            el usuario o mientras sean necesarios para cumplir con obligaciones legales.</p>
+            <p><span class="text-xl">6. Destinatarios y encargados del tratamiento</span>  
+              <br>Los datos se alojan en los servidores de
+            Appwrite, entidad que cumple con las garantías exigidas por el RGPD. No
+            se prevén cesiones adicionales, salvo obligación legal.</p>
+            <p><span class="text-xl">7. Derechos de los interesados</span>
+              <br>Los usuarios podrán ejercer sus derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad enviando una solicitud a
+            timecupleague@gmail.com, acreditando su identidad.</p>
+            <p><span class="text-xl">8. Medidas de seguridad</span>
+              <br>TimeCup League implementa las medidas técnicas y organizativas necesarias para garantizar la confidencialidad, integridad y disponibilidad de
+            los datos.</p>
+            <p><span class="text-xl">9. Uso de cookies</span>
+              <br>El sitio web utiliza Google Analytics para el análisis estadístico del tráfico. El uso de cookies se describe en la correspondiente Política de Cookies disponible
+            en el sitio web.</p>
+            <p><span class="text-xl">10. Actualización de la política</span>
+            <br>TimeCup League podrá actualizar esta Política de Privacidad cuando sea necesario, comunicándolo a los usuarios cuando proceda.</p>
+                        
+          </div>
+        </div>
+      </Container>
+    </Section>
+
+  </main>
+  <Footer />
+</Layout>
