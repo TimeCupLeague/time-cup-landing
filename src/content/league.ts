@@ -2,6 +2,8 @@
 // LEAGUE CONTENT DATA
 // =============================================================================
 
+export const urlForm = 'https://forms.gle/Dz7RZG1fUxsJUrzZ6'
+
 export interface LeagueCategory {
   id: string
   name: string
