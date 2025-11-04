@@ -6,7 +6,7 @@ import astro from 'eslint-plugin-astro'
 export default [
   js.configs.recommended,
   {
-    files: ['**/*.{js,mjs,cjs,ts,tsx}'],
+    files: ['**/*.{js,mjs,cjs,ts,tsx,astro}'],
     languageOptions: {
       parser: typescriptParser,
       parserOptions: {

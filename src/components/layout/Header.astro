@@ -1,6 +1,6 @@
 ---
 import logoTimecup from '../../assets/logo_timecup_white.svg';
-
+import { urlForm } from '../../content/league';
 ---
 
 <header class="fixed top-0 z-50 w-full bg-black/80 backdrop-blur-md border-b border-white/10">
@@ -19,7 +19,7 @@ import logoTimecup from '../../assets/logo_timecup_white.svg';
                 <a class="hover:text-primary-500 transition-colors" href="/#standards">Categorías</a>
                 <a class="hover:text-primary-500 transition-colors" href="/bases">Bases</a>
             </div>
-            <a href="https://forms.gle/Dz7RZG1fUxsJUrzZ6" class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 px-4 bg-primary-500 text-white text-sm font-bold tracking-wider hover:bg-primary/90 transition-all duration-300 ease-in-out transform hover:scale-105">
+            <a href={urlForm} target="_blank" class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 px-4 bg-primary-500 text-white text-sm font-bold tracking-wider hover:bg-primary/90 transition-all duration-300 ease-in-out transform hover:scale-105">
                   INSCRÍBETE
             </a>
         </div>
