@@ -444,7 +444,7 @@ export const leagueStandards: LeagueStandard = {
   'Toes To Bar': {
     rx: true,
     intermediate: true,
-    scaled: 'Knees To Chest',
+    scaled: 'Knees To Elbows',
   },
   'Pull Up': {
     rx: true,
