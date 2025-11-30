@@ -56,7 +56,18 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   </head>
   <body class="bg-black font-display text-white">
     <div class="relative flex h-auto min-h-screen w-full flex-col dark group/design-root overflow-x-hidden">
-    <slot />
+      <slot />
     </div>
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "SportsLeague",
+      "name": "TimeCup League",
+      "url": "https://www.timecupleague.com",
+      "description": "La primera liga online y presencial de Cross Training en formato competitivo.",
+      "logo": "https://www.timecupleague.com/logo.png",
+      "sameAs": [
+        "https://www.instagram.com/timecupleague"
+      ]
+    })} />
   </body>
 </html>
