@@ -16,6 +16,7 @@
   "dependencies": {
     "@astrojs/react": "^4.4.1",
     "@astrojs/sitemap": "^3.6.0",
+    "@supabase/supabase-js": "^2.87.1",
     "@tailwindcss/postcss": "^4.1.13",
     "@tailwindcss/vite": "^4.1.13",
     "@types/react": "^19.2.2",
