@@ -13,6 +13,11 @@ export default [
         ecmaVersion: 'latest',
         sourceType: 'module',
       },
+      globals: {
+        window: 'readonly',
+        document: 'readonly',
+        URLSearchParams: 'readonly',
+      },
     },
     plugins: {
       '@typescript-eslint': typescript,
