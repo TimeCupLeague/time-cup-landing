@@ -300,7 +300,7 @@ export const leagueRules: LeagueRule[] = [
 ]
 
 export const leagueInfo = {
-  name: 'Time Cup League',
+  name: 'TimeCup League',
   tagline: 'Compite todo el año, no solo un fin de semana',
   description:
     'Una liga online y presencial de Cross Training en formato competitivo, con seasons de 3 meses, categorías por nivel y equipos de 3 personas.',
