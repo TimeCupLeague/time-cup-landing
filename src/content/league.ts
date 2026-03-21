@@ -101,14 +101,13 @@ export const leagueFeatures: LeagueFeature[] = [
   {
     id: 'team-format',
     title: 'Formato de Equipos',
-    description:
-      'Equipos de 3 atletas (2 hombres + 1 mujer) para fomentar la igualdad y el trabajo en equipo.',
+    description: 'Equipos de 2 atletas para fomentar la igualdad y el trabajo en equipo.',
     icon: 'groups',
   },
   {
     id: 'online-presential',
     title: 'Online + Presencial',
-    description: '5 jornadas online y 1 jornada presencial final para vivir la experiencia en comunidad.',
+    description: '4 jornadas online y 1 jornada presencial final para vivir la experiencia en comunidad.',
     icon: 'linked_camera',
   },
   {
@@ -199,7 +198,7 @@ export const leagueRules: LeagueRule[] = [
     content: '',
     subsections: [
       'Duración de la temporada: 3 meses (de octubre a diciembre / de enero a marzo / de abril a junio).',
-      'Jornadas: un total de 6 jornadas. Las 5 primeras se realizarán de forma online, y la última de forma presencial en uno de los boxes afiliados.',
+      'Jornadas: un total de 5 jornadas. Las 4 primeras se realizarán de forma online, y la última de forma presencial en uno de los boxes afiliados.',
       'Publicación de WODs: cada domingo se publica un nuevo entrenamiento oficial en web e IG.',
       'Entrega de resultados: los equipos tienen hasta el miércoles de la semana siguiente (11 días en total) para grabar y enviar su vídeo.',
       'Corrección de vídeos: de miércoles a sábado el equipo de jueces revisa todos los envíos.',
@@ -219,7 +218,7 @@ export const leagueRules: LeagueRule[] = [
     title: 'Equipos',
     content: '',
     subsections: [
-      'Formato: equipos de 3 atletas (2 hombres + 1 mujer).',
+      'Formato: equipos de 2 atletas.',
       'Suplente: cada equipo puede registrar 1 atleta suplente que podrá competir en caso de baja.',
       'Requisitos: todos los atletas deben estar inscritos oficialmente en la plataforma de la liga.',
     ],
@@ -232,7 +231,6 @@ export const leagueRules: LeagueRule[] = [
       'El equipo ganador de cada división asciende a la división superior.',
       'El último clasificado de cada división desciende a la división inferior.',
       'El premio por ascenso: inscripción gratuita en la siguiente temporada.',
-      'El premio por ganar en categoría RX: Una cena romántica con Borja y Raúl.',
     ],
   },
   {
@@ -305,11 +303,11 @@ export const leagueInfo = {
   description:
     'Una liga online y presencial de Cross Training en formato competitivo, con seasons de 3 meses, categorías por nivel y equipos de 3 personas.',
   seasonDuration: '3 meses',
-  teamSize: '3 atletas 👨👨👩',
+  teamSize: '2 atletas',
   categories: leagueCategories.length,
-  onlineJornadas: 5,
+  onlineJornadas: 4,
   presentialJornadas: 1,
-  totalJornadas: 6,
+  totalJornadas: 5,
 }
 
 export interface HowItWorksStep {
