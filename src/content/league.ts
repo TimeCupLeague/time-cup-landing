@@ -344,7 +344,7 @@ export const howItWorksContent: HowItWorks = {
       id: 'inscription',
       number: 1,
       title: 'Inscripción',
-      description: 'Forma tu equipo de 3 atletas y elige tu categoría. El proceso es rápido y sencillo.',
+      description: 'Forma tu equipo de 2 atletas y elige tu categoría. El proceso es rápido y sencillo.',
     },
     {
       id: 'weekly-wod',
